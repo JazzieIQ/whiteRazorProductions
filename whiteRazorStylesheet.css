@@ -60,7 +60,7 @@ nav ul li a:hover {
 
 @media (max-width: 768px) {
     nav ul {
-        display: none; /* Hide the nav links initially on small screens */
+        display:list-item; /* Hide the nav links initially on small screens */
         flex-direction: column; /* Stack items vertically */
         width: 100%; /* Make the dropdown take the full width */
         text-align: left; /* Align text to the left */
