@@ -1,14 +1,16 @@
 /* Global styles */
 html, body {
-    color: whitesmoke; /* Corrected the color definition */
+    background-color:rgb(20, 20, 20);
+    color: whitesmoke;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Include padding and border in element's width and height */
+    box-sizing: border-box;
 }
-
-/* Apply box-sizing to all elements and pseudo-elements */
-*, *::before, *::after {
+body {
+    background-image: url('whiteRazorLogo.jpg') no-repeat;
+}
+a*, *::before, *::after {
     box-sizing: inherit;
 }
 
@@ -94,7 +96,6 @@ main {
 
 /* Header styles */
 header {
-    padding: 10px; /* Optional padding around the header */
 }
 
 .logoHeader {

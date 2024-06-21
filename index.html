@@ -1,16 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US" dir="ltr" style="color: whitesmoke; text-shadow: #333">
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const navToggle = document.querySelector('.nav-toggle');
-        const navUl = document.querySelector('nav ul');
-
-        navToggle.addEventListener('click', function() {
-            navToggle.classList.toggle('active');
-            navUl.classList.toggle('show');
-        });
-    });
-</script> 
+<html lang="en-US" dir="ltr">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-compatible" content="If=edge" />
@@ -18,65 +7,72 @@
     <link rel="stylesheet" href="whiteRazorStylesheet.css" />
     <link rel="icon" href="whiteRazorLogo.jpg" />
     <title>White Razor Productions</title>
-  </head>
-  <main>
-<header>
-    <div class="logoHeader">
-<video id="logoVideo" width="200" height="100" src="White Razor Productions LLC Intro logo.mp4" autoplay muted
-                   onloadedmetadata="this.currentTime = 0;" ontimeupdate="if (this.currentTime >= 8) { this.pause(); this.currentTime = 8; }"></video>
-      </div>
-      <div class="nav-toggle">Experience White Razor</div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home </a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="whiteRazorContact.html">Contact</a></li>
-          <li><a href="whiteRazorServices.html">Services</a></li>
-          <li><a href="whiteRazorHistory.html">History</a></li>
-        </ul>
-      </nav>
-</header>
-      <div class="videoplayer" id="reel">
-        <h2>Welcome to the White Razor Experience</h2>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/aXOzzz6bNMg?si=ubaBnMFn1fusGy9q"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowautoplay
-          allowfullscreen>
-        </iframe>
-      </div>
-    </header>
-    <p>
-      White Razor Productions is a full service production company that
-      specializes in video production, photography, and graphic design. We are
-      dedicated to providing our clients with the highest quality of work and
-      customer service. Our team of professionals will work with you every step
-      of the way to ensure that your vision is brought to life. Whether you are
-      looking to create a commercial, music video, or promotional video, we have
-      the skills and expertise to make it happen. Contact us today to learn more
-      about our services and how we can help you achieve your goals.
-    </p>
-    <body
-      background="whiteRazorLogo.jpg"
-      style="
-        background-position:right;
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-color: rgb(19, 19, 19);
-        background-attachment: fixed;
-      "
-    >
-      <!-- 
-Ryan Murchison has been working on my different projects for most of his life. At the age of eight he was making videos and films. In high school he was making thirty minute long films with professional actors and crew. After going to a art school in Atlanta, he came back to New Orleans to make a short film called Seeking Death. He then made a mockumentary about the conspiracy that Paul McCartney died. He graduated from Baylor University and during that time won awards at the CFF film festival in Virginia. He continues to make films and submit them to festivals.
-https://www.youtube.com/embed/3NzqiyvbBmU?si=WaW9yFg85eukxEdn
-https://www.imdb.com/name/nm3601510/bio?item=mb0393147
-        <h1 id="title">White Razor Productions</h1>
-  -->
-    </body>
-  </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navUl = document.querySelector('nav ul');
+            const homeLink = document.getElementById('homeLink');
+            const reelVideo = document.getElementById('reelVideo');
+
+            // Toggle navigation visibility
+            navToggle.addEventListener('click', function() {
+                navToggle.classList.toggle('active');
+                navUl.classList.toggle('show');
+            });
+
+            // Play YouTube video when Home link is clicked
+            homeLink.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default behavior of the anchor tag
+
+                // Play the YouTube video
+                reelVideo.src = "https://www.youtube.com/embed/aXOzzz6bNMg?autoplay=1";
+            });
+        });
+    </script>
+</head>
+<body>
+    <main>
+        <header>
+            <div class="logoHeader">
+                <video id="logoVideo" width="200" height="100" src="White Razor Productions LLC Intro logo.mp4" autoplay muted
+                               onloadedmetadata="this.currentTime = 0;" ontimeupdate="if (this.currentTime >= 8) { this.pause(); this.currentTime = 8; }"></video>
+            </div>
+            <div class="nav-toggle">Experience White Razor</div>
+            <nav>
+                <ul>
+                    <li><a href="#" id="homeLink">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="whiteRazorContact.html">Contact</a></li>
+                    <li><a href="whiteRazorServices.html">Services</a></li>
+                    <li><a href="whiteRazorHistory.html">History</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="videoplayer" id="reel">
+            <h2>Welcome to the White Razor Experience</h2>
+            <iframe
+              id="reelVideo"
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/aXOzzz6bNMg?si=ubaBnMFn1fusGy9q"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+        </div>
+
+        <p>
+            White Razor Productions is a full service production company that specializes in video production, photography, and graphic design. We are dedicated to providing our clients with the highest quality of work and customer service. Our team of professionals will work with you every step of the way to ensure that your vision is brought to life. Whether you are looking to create a commercial, music video, or promotional video, we have the skills and expertise to make it happen. Contact us today to learn more about our services and how we can help you achieve your goals.
+        </p>
+        <!-- 
+        Ryan Murchison has been working on my different projects for most of his life. At the age of eight he was making videos and films. In high school he was making thirty minute long films with professional actors and crew. After going to a art school in Atlanta, he came back to New Orleans to make a short film called Seeking Death. He then made a mockumentary about the conspiracy that Paul McCartney died. He graduated from Baylor University and during that time won awards at the CFF film festival in Virginia. He continues to make films and submit them to festivals.
+        https://www.youtube.com/embed/3NzqiyvbBmU?si=WaW9yFg85eukxEdn
+        https://www.imdb.com/name/nm3601510/bio?item=mb0393147
+        -->
+        <!-- <h1 id="title">White Razor Productions</h1> -->
+    </main>
+</body>
 </html>
