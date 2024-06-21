@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr" style="color: whitesmoke; text-shadow: #333">
-  <head>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const navToggle = document.querySelector('.nav-toggle');
+        const navUl = document.querySelector('nav ul');
+
+        navToggle.addEventListener('click', function() {
+            navToggle.classList.toggle('active');
+            navUl.classList.toggle('show');
+        });
+    });
+</script> 
+<head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-compatible" content="If=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,11 +22,10 @@
   <main>
 <header>
     <div class="logoHeader">
-      <video id="logoVideo" width="200" height="100" autoplay muted>
-        <source src="White Razor Productions LLC Intro logo.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-      </video>
+<video id="logoVideo" width="200" height="100" src="White Razor Productions LLC Intro logo.mp4" autoplay muted
+                   onloadedmetadata="this.currentTime = 0;" ontimeupdate="if (this.currentTime >= 8) { this.pause(); this.currentTime = 8; }"></video>
       </div>
+      <div class="nav-toggle">Experience White Razor</div>
       <nav>
         <ul>
           <li><a href="index.html">Home </a></li>

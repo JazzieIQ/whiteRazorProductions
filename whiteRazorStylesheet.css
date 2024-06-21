@@ -4,6 +4,12 @@ html, body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Include padding and border in element's width and height */
+}
+
+/* Apply box-sizing to all elements and pseudo-elements */
+*, *::before, *::after {
+    box-sizing: inherit;
 }
 
 /* Link styles */
@@ -13,25 +19,72 @@ a {
 }
 
 /* Navigation styles */
+nav {
+    background-color: #333;
+    width: 100%; /* Ensure nav takes the full width */
+    padding: 0;
+    margin: 0;
+}
+
 nav ul {
     list-style: none;
-    padding: 20;
-    background-color: #333;
-    text-align: center;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around; /* Distribute items evenly across the nav */
+    align-items: center; /* Center items vertically */
+    width: 100%; /* Ensure the ul covers the full width of the nav */
 }
 
 nav ul li {
-    display: inline;
+    flex: 1; /* Make each nav item take equal space */
+    text-align: center; /* Center text within each item */
 }
 
 nav ul li a {
-    padding: 10px;
-    display: inline-block;
+    display: block; /* Ensure the link covers the entire list item */
+    padding: 15px 20px; /* Add padding to the links */
 }
 
 nav ul li a:hover {
     background-color: #555;
     text-decoration: underline;
+}
+
+/* Dropdown Menu Styles for Small Screens */
+.nav-toggle {
+    display: none; /* Hide the toggle button by default */
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide the nav links initially on small screens */
+        flex-direction: column; /* Stack items vertically */
+        width: 100%; /* Make the dropdown take the full width */
+        text-align: left; /* Align text to the left */
+    }
+
+    nav ul li {
+        flex: none; /* Remove equal space requirement */
+    }
+
+    nav ul li a {
+        padding: 15px 20px; /* Maintain padding */
+    }
+
+    .nav-toggle {
+        display: block; /* Show the toggle button on small screens */
+        background-color: #333;
+        color: white;
+        padding: 15px 20px;
+        cursor: pointer;
+        text-align: center; /* Center the text of the toggle button */
+        width: 100%; /* Make the toggle button span the full width */
+    }
+
+    .nav-toggle.active + ul {
+        display: flex; /* Show the nav links when the toggle is active */
+    }
 }
 
 /* Main content styles */
@@ -46,8 +99,8 @@ header {
 
 .logoHeader {
     display: flex; /* Use flexbox to align items */
-    align-items: center; /* Center items vertically within the flex container */
-    justify-content: center; /* Center the content horizontally */
+    justify-content: flex-start; /* Align items to the left by default */
+    align-items: center; /* Center items vertically */
     position: relative; /* For potential relative positioning of child elements */
     background: url('bladeEdge.jpg') no-repeat center center; /* Set background image */
     background-size: cover; /* Stretch image to cover the div area */
@@ -59,16 +112,7 @@ header {
 #logoVideo {
     width: 200px; /* Fixed width for the video player */
     height: 100px; /* Fixed height for the video player */
-    margin-right: 10px; /* Add space between video and title */
-
-}
-
-#title {
-    font-size: 1.5em; /* Adjust font size as needed */
-    color:whitesmoke; /* Set color for the title */
-    margin: 0; /* Remove default margin */
-    flex: 1; /* Allow the title to grow and take available space */
-    text-align: center; /* Center the text within its flex space */
+    margin-right: 10px; /* Space between video and other elements */
 }
 
 /* Responsive adjustments */
@@ -76,20 +120,24 @@ header {
     .logoHeader {
         flex-direction: column; /* Stack items vertically on small screens */
         align-items: center; /* Center items horizontally */
+        justify-content: center; /* Center the content horizontally */
     }
 
     #logoVideo {
-        display: none; /* Hide the video on small screens */
-    }
-
-    #title {
-        margin-top: 10px; /* Add margin to the top when stacked */
+        display: block; /* Ensure the video is visible */
+        margin: 0 auto; /* Center the video horizontally */
     }
 }
 
 @media (min-width: 769px) {
+    .logoHeader {
+        flex-direction: row; /* Align items in a row for larger screens */
+        justify-content: flex-start; /* Align items to the left */
+    }
+
     #logoVideo {
         display: block; /* Ensure the video is shown on larger screens */
+        margin: 0; /* Remove auto margin for left alignment */
     }
 }
 
