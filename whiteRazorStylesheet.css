@@ -1,19 +1,21 @@
-html {
-    color: whitesmoke, .5;
-}
-body {
-    color:whitesmoke;
+/* Global styles */
+html, body {
+    color: whitesmoke; /* Corrected the color definition */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
-link {
-    color: white;
+
+/* Link styles */
+a {
+    color: white; /* Ensure all links are white by default */
+    text-decoration: none; /* Default no underline for links */
 }
 
+/* Navigation styles */
 nav ul {
     list-style: none;
-    padding: 0;
+    padding: 20;
     background-color: #333;
     text-align: center;
 }
@@ -23,25 +25,75 @@ nav ul li {
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: white;
-    padding: 10px 15px;
+    padding: 10px;
     display: inline-block;
 }
 
 nav ul li a:hover {
     background-color: #555;
+    text-decoration: underline;
 }
 
+/* Main content styles */
 main {
-    padding: 20px;
     text-align: center;
 }
 
-h1 {
-    color:whitesmoke, .5;
+/* Header styles */
+header {
+    padding: 10px; /* Optional padding around the header */
 }
 
-p {
-    color:whitesmoke, .5;
+.logoHeader {
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Center items vertically within the flex container */
+    justify-content: center; /* Center the content horizontally */
+    position: relative; /* For potential relative positioning of child elements */
+    background: url('bladeEdge.jpg') no-repeat center center; /* Set background image */
+    background-size: cover; /* Stretch image to cover the div area */
+    padding: 10px; /* Padding inside the logoHeader div */
+    width: 100%; /* Full width of the parent container */
+    height: auto; /* Ensure the height adjusts to fit content */
+}
+
+#logoVideo {
+    width: 200px; /* Fixed width for the video player */
+    height: 100px; /* Fixed height for the video player */
+    margin-right: 10px; /* Add space between video and title */
+
+}
+
+#title {
+    font-size: 1.5em; /* Adjust font size as needed */
+    color:whitesmoke; /* Set color for the title */
+    margin: 0; /* Remove default margin */
+    flex: 1; /* Allow the title to grow and take available space */
+    text-align: center; /* Center the text within its flex space */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .logoHeader {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: center; /* Center items horizontally */
+    }
+
+    #logoVideo {
+        display: none; /* Hide the video on small screens */
+    }
+
+    #title {
+        margin-top: 10px; /* Add margin to the top when stacked */
+    }
+}
+
+@media (min-width: 769px) {
+    #logoVideo {
+        display: block; /* Ensure the video is shown on larger screens */
+    }
+}
+
+/* Specific text color adjustments */
+h1, p {
+    color: whitesmoke; /* Ensure consistent text color */
 }
