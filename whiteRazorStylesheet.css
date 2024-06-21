@@ -87,6 +87,9 @@ nav ul li a:hover {
     .nav-toggle.active + ul {
         display: flex; /* Show the nav links when the toggle is active */
     }
+    #reelVideo{
+        display: relative;
+    }
 }
 
 /* Main content styles */
