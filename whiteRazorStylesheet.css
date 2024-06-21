@@ -94,10 +94,10 @@ main {
     text-align: center;
 }
 
-/* Header styles */
+/* Header styles *//*
 header {
 }
-
+*/
 .logoHeader {
     display: flex; /* Use flexbox to align items */
     justify-content: flex-start; /* Align items to the left by default */
