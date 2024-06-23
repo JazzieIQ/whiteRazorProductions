@@ -152,14 +152,28 @@ h1, p {
     color: whitesmoke;
 }
 
+#reel{
+    display:inline-block;
+}
+#reelHeader{
+    display: block;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    background-color: #33333379;
+}
 #reelVideo{
-
+    display: inline-block;
+    text-align: center;
+    background-color: #33333379;
 }
 #logo {
+    display: inline-block;
     background-image: url('whiteRazorLogo.jpg');
     background-repeat: no-repeat;
-    background-position: right right;
-    background-size: contain; /* Adjust background size as needed */
+    background-position: center right;
+    background-size: cover; /* Adjust background size as needed */
     background-attachment: fixed;
 
 }
