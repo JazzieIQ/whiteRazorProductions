@@ -85,6 +85,9 @@ nav ul li a:hover {
     .nav-toggle.active + ul {
         display: flex;
     }
+    #reelVideo{
+        display: flex;
+    }
 }
 
 /* Main content styles */
