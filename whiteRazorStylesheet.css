@@ -6,11 +6,6 @@ html, body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-image: url('whiteRazorLogo.jpg');
-    background-repeat: no-repeat;
-    background-position: center right;
-    background-size: contain; /* Adjust background size as needed */
-    background-attachment: fixed;
 }
 
 a, *::before, *::after {
@@ -96,7 +91,6 @@ nav ul li a:hover {
 main {
     text-align: center;
     width: 100%;
-    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -111,11 +105,11 @@ header {
     justify-content: space-between; /* Align items to the right */
     align-items: center;
     position: relative;
-    background: url('bladeEdge.jpg') no-repeat center center;
-    background-size: cover; /* Adjust background size as needed */
-    width: 100%;
+    background: url('whiteRazorLogo.jpg') no-repeat center center;
+    background-size:contain; /* Adjust background size as needed */
+    width: auto;
     height: auto;
-    padding: 10px;
+
 }
 
 #logoVideo {
@@ -129,6 +123,7 @@ header {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        background: none;
     }
 
     #logoVideo {
@@ -152,4 +147,16 @@ header {
 /* Specific text color adjustments */
 h1, p {
     color: whitesmoke;
+}
+
+#reelVideo{
+
+}
+#logo {
+    background-image: url('whiteRazorLogo.jpg');
+    background-repeat: no-repeat;
+    background-position: right right;
+    background-size: contain; /* Adjust background size as needed */
+    background-attachment: fixed;
+
 }
