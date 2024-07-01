@@ -177,3 +177,17 @@ h1, p {
     background-attachment: fixed;
 
 }
+
+#footer {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    background-color: #33333379;
+}
+#footerText {
+    display: inline;
+    width: 100%;
+    text-align: left;
+}
+
