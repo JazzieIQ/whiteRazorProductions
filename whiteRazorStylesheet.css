@@ -1,53 +1,55 @@
-/* Global styles */
-html, body {
-    background-color: rgb(20, 20, 20); /* Main background color */
-    color: whitesmoke;
+/* General styles */
+body {
     font-family: Arial, sans-serif;
-    box-sizing: border-box;
+    font-size: 24px;
     margin: 0;
     padding: 0;
-    font-size: 24px;
-}
-
-a, *::before, *::after {
-    box-sizing: inherit;
-}
-
-a {
+    background-color: rgb(20, 20, 20);
     color: whitesmoke;
-    text-decoration: none;
-    transition: text-decoration 0.3s ease;
 }
 
-a:hover {
-    text-decoration: underline;
+header, footer {
+    color: whitesmoke;
+    padding: 10px 0;
+    text-align: center;
 }
 
-/* Container for consistent width */
-.container {
-    max-width: 1200px; /* Adjust this value to suit your layout needs */
-    margin: 0 auto;
-    padding: 0 20px; /* Optional: To add some padding on the sides */
+footer {
+    background-color: #333;
 }
 
-/* Header styles */
-header {
-    width: 100%;
-}
-
-.logoHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: url('whiteRazorLogo.jpg') no-repeat center center;
-    background-size: contain;
-    width: 100%;
-    height: auto;
+.logo {
+    display: inline-flex;
+    background-color: rgb(20, 20, 20);
 }
 
 #logoVideo {
-    width: 300px;
-    height: 150px;
+    display: block;
+    align-items: left;
+    justify-content: left;
+    margin: 0 auto;
+    width: 200px;
+    height: auto;
+}
+
+#logoImage {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 10px;
+    background-color: rgb(20, 20, 20);
+}
+
+/* Center #logoHeader within the .logo container */
+#logoHeader {
+    width: 100px;
+    height: auto;
+}
+
+/* Center #logoFooter within the footer */
+#logoFooter {
+    display: none;
 }
 
 /* Navigation styles */
@@ -76,6 +78,8 @@ nav ul li {
 nav ul li a {
     display: block;
     padding: 15px 20px;
+    color: whitesmoke;
+    text-decoration: none;
 }
 
 nav ul li a:hover {
@@ -86,127 +90,89 @@ nav ul li a:hover {
     display: none;
 }
 
-/* Main content styles */
+/* Main content styling */
 main {
-    display: block;
-    text-align: center;
-    width: 100%;
-    margin: 0 auto;
-    padding: auto;
-}
-
-h1, p {
-    color: whitesmoke;
-}
-
-/* Reel section styles */
-#reel {
     padding: 20px;
-    display: inline-block;
-    width:auto;
     text-align: center;
-}
-
-#reelHeader {
-    display: block;
-    margin: 0 auto;
-    padding: 20px;
-    width: 100%;
-    text-align: center;
-    background-color: #33333379;
 }
 
 #reelVideo {
+    width: 1280px;
+    height: 720px;
+    margin: 20px 0;
+}
+
+/* Footer styling */
+footer .text {
+    margin: 20px 0;
+}
+
+#shareLinks a {
+    color: whitesmoke;
+    margin: 0 5px;
+    text-decoration: none;
     display: inline-block;
-    text-align: center;
-    background-color: #33333379;
-    width: "1280";
-    height:"720";
 }
 
-/* Footer styles */
-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    width: 100%;
-    background-color: #2a2a2a; /* Slightly off-black color for the footer */
-    flex-wrap: wrap;
-    box-sizing: border-box; /* Ensure padding is included in width calculations */
+#shareLinks svg {
+    fill: black;
+    transition: fill 0.3s;
 }
 
-#footerText {
-    flex: 1;
-    text-align: left;
-    padding-right: 20px;
-    box-sizing: border-box;
-}
-
-#share {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    box-sizing: border-box;
-}
-
-#share a {
-    margin-left: 15px;
+#shareLinks svg:hover {
+    fill: whitesmoke;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .logoHeader {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
+    body {
+        font-size: 16px;
     }
-
-    #reelHead {
-        display: none;
-    }
-    #logoVideo {
+    .nav-toggle {
         display: block;
-        margin: 0 auto;
+        background-color: #444;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-left: auto;
     }
 
     nav ul {
-        display: none;
         flex-direction: column;
+        display: none; /* Hide by default for smaller screens */
         width: 100%;
-        text-align: left;
     }
 
-    nav ul li {
-        flex: none;
+    nav ul.show {
+        display: flex; /* Show when toggled */
     }
 
-    nav ul li a {
-        padding: 15px 20px;
+    .logo {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
-    .nav-toggle {
+    #logoHeader, #logoFooter {
         display: block;
-        background-color: #333;
-        color: whitesmoke;
-        padding: 15px 20px;
-        cursor: pointer;
-        text-align: center;
-        width: 100%;
+        margin: 0 auto;
+        width: 100px;
+        height: auto;
     }
 
-    .nav-toggle.active + ul {
-        display: flex;
+    #reelHead {
+        display: none; /* Hide the reel header on smaller screens */
     }
-    #reel{
-    padding: 2px;
-}
+
     #reelVideo {
-        display: block;
-        max-width: 360px;  /* Limit the maximum width */
-        height: auto;  /* Maintain aspect ratio */
+        width: 60%;
+        height: 60%;
+    }
+
+    #logoVideo {
+        display: none; /* Hide the logo video on smaller screens */
     }
 
     footer {
@@ -221,7 +187,14 @@ footer {
     }
 
     #share {
+        display: block;
         justify-content: center;
         padding-top: 10px;
     }
+    #logoContainer {
+        padding-top: 20px;
+        margin-top: 20px;
+    background-color: rgb(20, 20, 20);
+    }
+
 }
