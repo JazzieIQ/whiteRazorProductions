@@ -12,6 +12,16 @@ a, *::before, *::after {
     box-sizing: inherit;
 }
 
+a {
+    color: whitesmoke;
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 /* Container for consistent width */
 .container {
     max-width: 1200px; /* Adjust this value to suit your layout needs */
@@ -63,14 +73,12 @@ nav ul li {
 }
 
 nav ul li a {
-    color: whitesmoke;
     display: block;
     padding: 15px 20px;
 }
 
 nav ul li a:hover {
     background-color: #555;
-    text-decoration: underline;
 }
 
 .nav-toggle {
@@ -79,10 +87,11 @@ nav ul li a:hover {
 
 /* Main content styles */
 main {
+    display: block;
     text-align: center;
     width: 100%;
     margin: 0 auto;
-
+    padding: auto;
 }
 
 h1, p {
@@ -91,6 +100,7 @@ h1, p {
 
 /* Reel section styles */
 #reel {
+    padding: 20px;
     display: inline-block;
     width: 100%;
     text-align: center;
@@ -105,11 +115,6 @@ h1, p {
     background-color: #33333379;
 }
 
-#reel {
-    align-content: center;
-    align-items: center;
-}
-
 #reelVideo {
     display: inline-block;
     text-align: center;
@@ -117,33 +122,30 @@ h1, p {
 }
 
 /* Footer styles */
-#footer {
+footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
     width: 100%;
-    background-color: #555; /* Slightly off-black color for the footer */
+    background-color: #2a2a2a; /* Slightly off-black color for the footer */
     flex-wrap: wrap;
     box-sizing: border-box; /* Ensure padding is included in width calculations */
 }
 
-#footerText, #share {
+#footerText {
     flex: 1;
-    display: flex;
-    align-items: center;
-    padding: 10px;
+    text-align: left;
+    padding-right: 20px;
     box-sizing: border-box;
 }
 
-#footerText {
-    text-align: left;
-    padding-right: 20px;
-}
-
 #share {
-    text-align: right;
-    justify-content: flex-end; /* Align icons to the right within the share div */
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 #share a {
@@ -159,6 +161,9 @@ h1, p {
         background: none;
     }
 
+    #reelHead {
+        display: none;
+    }
     #logoVideo {
         display: block;
         margin: 0 auto;
@@ -169,7 +174,6 @@ h1, p {
         flex-direction: column;
         width: 100%;
         text-align: left;
-
     }
 
     nav ul li {
@@ -178,7 +182,6 @@ h1, p {
 
     nav ul li a {
         padding: 15px 20px;
-        color: whitesmoke;
     }
 
     .nav-toggle {
@@ -194,32 +197,28 @@ h1, p {
     .nav-toggle.active + ul {
         display: flex;
     }
-
+    #reel{
+    padding: 2px;
+}
     #reelVideo {
-        display: flex;
-        flex-direction: column;
-        height: fit-content;
-        width: fit-content;
+        display: block;
+
+        max-width: 360px;  /* Limit the maximum width */
+        height: auto;  /* Maintain aspect ratio */
     }
 
-    #footer {
+    footer {
         flex-direction: column;
         text-align: center;
     }
 
     #footerText, #share {
-        display: block;
         width: 100%;
+        text-align: center;
         padding: 10px 0;
     }
 
-    #footerText {
-        text-align: center; /* Center text on smaller screens */
-        padding-right: 0;
-    }
-
     #share {
-        text-align: center; /* Center icons on smaller screens */
         justify-content: center;
         padding-top: 10px;
     }
