@@ -117,19 +117,19 @@ footer .text {
     margin: 20px 0;
 }
 
-#shareLinks, #references a {
+#shareLinks a {
     color: whitesmoke;
     margin: 0 5px;
     text-decoration: none;
     display: inline-block;
 }
 
-#shareLinks, #references svg {
+#shareLinks svg {
     fill: black;
     transition: fill 0.3s;
 }
 
-#shareLinks, #references svg:hover {
+#shareLinks svg:hover {
     fill: whitesmoke;
 }
 #shareLinks img {
@@ -138,6 +138,21 @@ footer .text {
 
 #shareLinks img:hover {
   filter: invert(120%);
+}
+#references a {
+    color: whitesmoke;
+    margin: 0 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#references svg {
+    fill: black;
+    transition: fill 0.3s;
+}
+
+#references svg:hover {
+    fill: whitesmoke;
 }
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -183,8 +198,8 @@ footer .text {
     }
 
     #reelVideo {
-        width: 60%;
-        height: 60%;
+        height: 360px;
+        width: auto;
     }
 
     #logoVideo {
