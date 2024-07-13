@@ -18,33 +18,37 @@ footer {
     background-color: #333;
 }
 
+a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+a follow {
+    color: whitesmoke;
+    text-decoration: none;
+}
+/* Logo container */
 .logo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative; /* Necessary for absolute positioning of the centered image */
+    position: relative;
     width: 100%;
-    height: 100px; /* Adjust as needed for your design */
-    background-color: rgb(20, 20, 20);
-}
-
-#logoVideo {
-    display: inline-block;
-    align-items: left;
-    justify-content: left;
-    position:relative;
-    margin: 0 auto;
-    width: 200px;
     height: 100px;
+    background-color: rgb(20, 20, 20);
 }
 
-#logoImage {
-    display: inline-block;
-    justify-content: center;
-    align-items: center;
-    position:fixed;
-    margin-bottom: 10px;
-    background-color: rgb(20, 20, 20);
+/* Logo video */
+.logoVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+/* Logo image */
+.logoImage {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
 }
 
 /* Center #logoHeader within the .logo container */
@@ -52,7 +56,6 @@ footer {
     width: 100px;
     height: auto;
 }
-
 /* Center #logoFooter within the footer */
 #logoFooter {
     display: none;
@@ -130,13 +133,11 @@ footer .text {
     fill: whitesmoke;
 }
 #shareLinks img {
-  width: 24px;
-  height: 24px;
   transition: filter 0.3s;
 }
 
 #shareLinks img:hover {
-  filter: brightness(120%);
+  filter: invert(120%);
 }
 /* Responsive adjustments */
 @media (max-width: 768px) {
