@@ -117,19 +117,19 @@ footer .text {
     margin: 20px 0;
 }
 
-#shareLinks a {
+#shareLinks, #references a {
     color: whitesmoke;
     margin: 0 5px;
     text-decoration: none;
     display: inline-block;
 }
 
-#shareLinks svg {
+#shareLinks, #references svg {
     fill: black;
     transition: fill 0.3s;
 }
 
-#shareLinks svg:hover {
+#shareLinks, #references svg:hover {
     fill: whitesmoke;
 }
 #shareLinks img {
