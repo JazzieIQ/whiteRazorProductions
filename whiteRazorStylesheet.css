@@ -129,7 +129,15 @@ footer .text {
 #shareLinks svg:hover {
     fill: whitesmoke;
 }
+#shareLinks img {
+  width: 24px;
+  height: 24px;
+  transition: filter 0.3s;
+}
 
+#shareLinks img:hover {
+  filter: brightness(120%);
+}
 /* Responsive adjustments */
 @media (max-width: 768px) {
     body {
