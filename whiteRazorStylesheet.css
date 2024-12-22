@@ -91,7 +91,7 @@ nav ul li a {
     text-decoration: none;
 }
 
-nav ul li a:hover {
+nav ul li a, #phone, #email:hover {
     background-color: #555;
     text-decoration: underline;
 }
@@ -228,4 +228,95 @@ footer .text {
     background-color: rgb(20, 20, 20);
     }
 
+}
+/*contact page*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+body {
+  background: black;
+}
+
+.wrap {
+  height: 48vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8px;
+  }
+}
+
+.parent {
+  position: relative;
+  .sub {
+    transition: all 0.5s ease-in-out;
+  }
+  .thanks {
+    font-size: 13px;
+    transition: all 0.5s ease-in-out;
+    position: absolute;
+    top: -5px;
+    left: 0;
+    opacity: 0;
+  }
+}
+
+.text {
+  font-size: 48px;
+  color:whitesmoke;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.5s ease-in-out;
+}
+
+#toggle {
+  display: none;
+}
+
+.button {
+  position: absolute;
+  z-index: 999;
+  width: 28px;
+  height: 28px;
+  background: black;
+  border-radius: 10%;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  &:before {
+    position: absolute;
+    top: 13px;
+    left: 6px;
+    content: '';
+    width: 16px;
+    height: 2px;
+    background: grey;
+    transform: rotate(90deg);
+  }
+  &:after {
+    position: absolute;
+    top: 13px;
+    left: 6px;
+    content: '';
+    width: 16px;
+    height: 2px;
+    background: grey;
+  }
+}
+
+#toggle:checked ~ .nav {
+  opacity: 1;
+  transform: translateY(10%);
+}
+
+#toggle:checked ~ .button {
+  transform: rotate(135deg);
+  box-shadow: 0 0 0 0 transparent;
+  border-radius: 100%;
+}
+
+#toggle:checked ~ .subbed {
+  opacity: 1;
 }
