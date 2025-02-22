@@ -51,13 +51,11 @@ a follow {
     transform: translateX(-50%);
     z-index: 5;
 }
-
-/* Center #logoHeader within the .logo container */
 #logoHeader {
     width: 100px;
     height: auto;
 }
-/* Center #logoFooter within the footer */
+
 #logoFooter {
     display: none;
 }
@@ -173,12 +171,12 @@ footer .text {
 
     nav ul {
         flex-direction: column;
-        display: none; /* Hide by default for smaller screens */
+        display: none;
         width: 100%;
     }
 
     nav ul.show {
-        display: flex; /* Show when toggled */
+        display: flex;
     }
 
     .logo {
@@ -195,7 +193,7 @@ footer .text {
     }
 
     #reelHead {
-        display: none; /* Hide the reel header on smaller screens */
+        display: none;
     }
 
     #reelVideo {
@@ -204,7 +202,7 @@ footer .text {
     }
 
     #logoVideo {
-        display: none; /* Hide the logo video on smaller screens */
+        display: none;
     }
 
     footer {
@@ -230,8 +228,8 @@ footer .text {
     }
 
 }
-/*contact page*/
 
+/*contact page*/
 body {
   background: black;
 }
@@ -264,10 +262,31 @@ body {
   }
 }
 #subscription {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+#subscription input[type="text"] {
+  width: 100%; 
+  max-width: 300px;
+  padding: 10px; 
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.wrap {
+  display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  .subbed {
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+  }
 }
 .text {
   font-size: 24px;
