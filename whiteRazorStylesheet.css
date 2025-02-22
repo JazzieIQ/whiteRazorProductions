@@ -1,4 +1,6 @@
 /* General styles */
+url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 body {
     font-family: Arial, sans-serif;
     font-size: 24px;
@@ -230,7 +232,7 @@ footer .text {
 
 }
 /*contact page*/
-url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 body {
   background: black;
 }
@@ -262,7 +264,12 @@ body {
     opacity: 0;
   }
 }
-
+#subscription {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 .text {
   font-size: 24px;
   color:whitesmoke;
@@ -272,12 +279,6 @@ body {
   transition: all 0.5s ease-in-out;
 }
 
-#subscription {
-  display: block;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
 #toggle {
   display: none;
 }
