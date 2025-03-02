@@ -273,6 +273,11 @@ footer .text {
   text-transform: uppercase;
   transition: all 0.5s ease-in-out;
 }
+#subbed {
+  display: none;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}
 /*
 .wrap {
   height: 48yh;
