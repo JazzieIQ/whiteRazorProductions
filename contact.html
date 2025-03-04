@@ -9,25 +9,17 @@
     <title>White Razor Productions</title>
     <!-- Include jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script defer>
+    <script type="module" src="navToggle.js"></script>
+    <script type="module" src="subscriptionToggle.js"></script>
+     <script defer>
       document.addEventListener("DOMContentLoaded", function () {
         const navToggle = document.querySelector(".nav-toggle");
         const navUl = document.querySelector("nav ul");
-        const homeLink = document.getElementById("homeLink");
-        const reelVideo = document.getElementById("reelVideo");
 
         // Toggle navigation visibility
         navToggle.addEventListener("click", function () {
           navToggle.classList.toggle("active");
           navUl.classList.toggle("show");
-        });
-
-        // Play YouTube video when Home link is clicked
-        homeLink.addEventListener("click", function (event) {
-          event.preventDefault(); // Prevent default behavior of the anchor tag
-          // Play the YouTube video
-          reelVideo.src =
-            "https://www.youtube.com/embed/aXOzzz6bNMg?autoplay=1";
         });
 
         // jQuery-based subscription toggle
@@ -84,7 +76,7 @@
     <main>
       <h2>Keep in Touch</h2>
       <div id="subscription">
-        <input id="emailer" title="Email" placeholder="Enter your email"/>
+        <input type="text" id="emailer" title="Email" placeholder="Enter your email"/>
         <div id= "submit" class="button">
           <input type="button" id="toggle" title="Subscribe to newsletter"/>
           <label class="button" for="toggle"></label>

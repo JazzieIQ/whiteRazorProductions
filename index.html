@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="whiteRazorStylesheet.css" />
     <link rel="icon" href="whiteRazorLogo.jpg" />
     <title>White Razor Productions</title>
-    <script defer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module" src="navToggle.js"></script>
+    <script type="module" src="youtubeVideo.js"></script>
+         <script defer>
       document.addEventListener("DOMContentLoaded", function () {
         const navToggle = document.querySelector(".nav-toggle");
         const navUl = document.querySelector("nav ul");
@@ -23,13 +26,12 @@
         // Play YouTube video when Home link is clicked
         homeLink.addEventListener("click", function (event) {
           event.preventDefault(); // Prevent default behavior of the anchor tag
-
           // Play the YouTube video
           reelVideo.src =
             "https://www.youtube.com/embed/aXOzzz6bNMg?autoplay=1";
         });
       });
-    </script>
+     </script>
   </head>
   <body>
     <header>
@@ -184,3 +186,38 @@
      </footer>
   </body>
 </html>
+<!--
+     <script defer>
+      document.addEventListener("DOMContentLoaded", function () {
+        const navToggle = document.querySelector(".nav-toggle");
+        const navUl = document.querySelector("nav ul");
+        const homeLink = document.getElementById("homeLink");
+        const reelVideo = document.getElementById("reelVideo");
+
+        // Toggle navigation visibility
+        navToggle.addEventListener("click", function () {
+          navToggle.classList.toggle("active");
+          navUl.classList.toggle("show");
+        });
+
+        // Play YouTube video when Home link is clicked
+        homeLink.addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent default behavior of the anchor tag
+          // Play the YouTube video
+          reelVideo.src =
+            "https://www.youtube.com/embed/aXOzzz6bNMg?autoplay=1";
+        });
+
+        // jQuery-based subscription toggle
+        $("#toggle").click(function () {
+          if ($(this).is(":checked")) {
+            $(".sub").css("opacity", 0);
+            $(".thanks").css("opacity", 1);
+          } else {
+            $(".sub").css("opacity", 1);
+            $(".thanks").css("opacity", 0);
+          }
+        });
+      });
+     </script>
+-->

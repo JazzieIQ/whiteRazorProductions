@@ -238,15 +238,16 @@ footer .text {
 }
 
 #subscription input[type="text"] {
-  width: 300px; 
-  padding: 10px; 
+  width: 400px; /* Increase width */
+  padding: 15px; /* Increase padding */
   margin-bottom: 10px;
   border: 1px solid #444;
   border-radius: 4px;
 }
+
 .emailer {
-  width: 300px; 
-  padding: 10px; 
+  width: 400px; /* Increase width */
+  padding: 15px; /* Increase padding */
   margin-bottom: 10px;
   border: 1px solid #444;
   border-radius: 4px;
@@ -261,22 +262,28 @@ footer .text {
   border-radius: 4px;
 }
 #submit {
-  width: 150px;
-  height: 100px;
-  background-image: url(
-'https://github.com/JazzieIQ/whiteRazorProductions/blob/2e23c81075479466c146d122154e203fc51fc4f1/whiteRazorLogo.jpg');
-  background-size: cover;
-  background-position: center;
+  width: 100px;
+  height: 50px;
   text-align: center;
   cursor: pointer;
   border-radius: 8px;
+
 }
 #toggle {
   width: 100px;
   height: 50px;
-  display: opacity=100%;
+  background-image: url('./whiteRazorLogoEdited.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(5px); /* Apply blur */
+  transition: filter 0.1s ease-in-out; /* Smooth transition */
 }
-  .text {
+
+#toggle:hover {
+  filter: blur(0); /* Remove blur on hover */
+}
+.text {
   font-size: 24px;
   color:whitesmoke;
   font-family: 'Open Sans', sans-serif;

@@ -7,6 +7,22 @@
     <link rel="stylesheet" href="whiteRazorStylesheet.css" />
     <link rel="icon" href="whiteRazorLogo.jpg" />
     <title>About White Razor Productions</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module" src="navToggle.js"></script>
+    <script defer>
+      document.addEventListener("DOMContentLoaded", function () {
+        const navToggle = document.querySelector(".nav-toggle");
+        const navUl = document.querySelector("nav ul");
+        const homeLink = document.getElementById("homeLink");
+        const reelVideo = document.getElementById("reelVideo");
+
+        // Toggle navigation visibility
+        navToggle.addEventListener("click", function () {
+          navToggle.classList.toggle("active");
+          navUl.classList.toggle("show");
+        });
+     });
+     </script>
   </head>
   <body>
     <header>
