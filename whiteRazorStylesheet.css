@@ -245,9 +245,10 @@ footer .text {
   border-radius: 4px;
 }
 
-.emailer {
+#emailer {
   width: 400px; /* Increase width */
   padding: 15px; /* Increase padding */
+  font-size: larger;
   margin-bottom: 10px;
   border: 1px solid #444;
   border-radius: 4px;
@@ -291,12 +292,17 @@ footer .text {
   text-transform: uppercase;
   transition: all 0.5s ease-in-out;
 }
+
+#thanks {
+display: none;
+}
+
+/*
 #subbed {
   display: none;
   transition: all 0.5s ease-in-out;
   opacity: 0;
 }
-/*
 .wrap {
   height: 48yh;
   display: flex;
