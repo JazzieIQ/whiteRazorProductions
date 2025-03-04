@@ -8,11 +8,11 @@
     <link rel="icon" href="whiteRazorLogo.jpg" />
     <title>White Razor Productions</title>
     <!-- Include jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="module" src="navToggle.js"></script>
-    <script type="module" src="subscriptionToggle.js"></script>
-    <script type="module" src="emailHandler.js"></script>
-    <script defer>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="navToggle.js" type="module" defer></script>
+    <script src="subscriptionToggle.js" type="module" defer></script>
+    <script src="emailHandler.js" type="module" defer></script>
+    <!--<script defer>
       document.addEventListener("DOMContentLoaded", function () {
         const navToggle = document.querySelector(".nav-toggle");
         const navUl = document.querySelector("nav ul");
@@ -37,71 +37,74 @@
             $(".thanks").css("opacity", 0);
           }
         });
-   toggleButton.addEventListener("click", async function () {
-    const email = emailInput.value.trim();
-    if (!email) return;
+        toggleButton.addEventListener("click", async function () {
+          const email = emailInput.value.trim();
+          if (!email) return;
+          try {
+            const fileHandle = await getFileHandle();
+            const emails = await readEmails(fileHandle);
+            if (!emails.includes(email)) {
+              emails.push(email);
+              await writeEmails(fileHandle, emails);
+              subText.style.display = "none";
+              thanksText.style.display = "block";
+            }
+          } catch (error) {
+            console.error("Error handling email:", error);
+          }
+        });
 
-    try {
-      const fileHandle = await getFileHandle();
-      const emails = await readEmails(fileHandle);
-      if (!emails.includes(email)) {
-        emails.push(email);
-        await writeEmails(fileHandle, emails);
-        subText.style.display = "none";
-        thanksText.style.display = "block";
-      }
-    } catch (error) {
-      console.error("Error handling email:", error);
-    }
-  });
+        async function getFileHandle() {
+          const options = {
+            type: "openFile",
+            accepts: [
+              {
+                description: "Text Files",
+                extensions: ["txt"],
+                mimeTypes: ["text/plain"],
+              },
+            ],
+          };
 
-  async function getFileHandle() {
-    const options = {
-      type: "searchFile",
-      accepts: [{
-        description: "Text Files",
-        extensions: ["txt"],
-        mimeTypes: ["text/plain"]
-      }]
-    };
+          let fileHandle;
+          try {
+            // Try to open the existing file
+            [fileHandle] = await window.showOpenFilePicker({
+              ...options,
+              suggestedName: "whiteRazorEmailer.txt",
+            });
+          } catch (error) {
+            // If the file doesn't exist, create a new one
+            fileHandle = await window.showSaveFilePicker({
+              ...options,
+              suggestedName: "whiteRazorEmailer.txt",
+            });
+          }
+          return fileHandle;
+        }
 
-    let fileHandle;
-    try {
-      // Try to open the existing file
-      [fileHandle] = await window.showOpenFilePicker({
-        ...options,
-        suggestedName: 'whiteRazorEmailer.txt'
+        async function readEmails(fileHandle) {
+          try {
+            const file = await fileHandle.getFile();
+            const contents = await file.text();
+            return contents.split("\n").filter((email) => email.trim());
+          } catch (error) {
+            return [];
+          }
+        }
+
+        async function writeEmails(fileHandle, emails) {
+          const writable = await fileHandle.createWritable();
+          await writable.write(emails.join("\n"));
+          await writable.close();
+        }
       });
-    } catch (error) {
-      // If the file doesn't exist, create a new one
-      fileHandle = await window.showSaveFilePicker({
-        ...options,
-        suggestedName: 'whiteRazorEmailer.txt'
-      });
-    }
-    return fileHandle;
-  }
-
-  async function readEmails(fileHandle) {
-    try {
-      const file = await fileHandle.getFile();
-      const contents = await file.text();
-      return contents.split("\n").filter(email => email.trim());
-    } catch (error) {
-      return [];
-    }
-  }
-
-  async function writeEmails(fileHandle, emails) {
-    const writable = await fileHandle.createWritable();
-    await writable.write(emails.join("\n"));
-    await writable.close();
-  }
-});
     </script>
+      -->
   </head>
   <body>
     <!-- Content -->
+
     <header>
       <div class="logo">
         <div class="logoVideo">
@@ -117,7 +120,7 @@
           ></video>
         </div>
         <div class="logoImage">
-          <img 
+          <img
             src="whiteRazorLogo.jpg"
             id="logoHeader"
             alt="White Razor Productions logo"
@@ -141,17 +144,22 @@
     <main>
       <h2>Keep in Touch</h2>
       <div id="subscription">
-        <input type="text" id="emailer" title="Email" placeholder="Enter your email"/>
-        <div id= "submit" class="button">
-          <input type="button" id="toggle" title="Subscribe to newsletter"/>
+        <input
+          type="text"
+          id="emailer"
+          title="Email"
+          placeholder="Enter your email"
+        />
+        <div id="submit" class="button">
+          <input type="button" id="toggle" title="Subscribe to newsletter" />
           <label class="button" for="toggle"></label>
         </div>
         <div class="text">
           <div id="sub">Subscribe Now</div>
           <div id="thanks">Thanks for Subscribing</div>
         </div>
-    </div>
-    <!-- Additional Content -->
+      </div>
+      <!-- Additional Content -->
     </main>
     <footer>
       <div class="share" id="share">
@@ -242,16 +250,16 @@
         </p>
       </div>
     </footer>
-      <div class="text" id="footerText">
-        <p>
-          White Razor Productions is a full-service company specializing in
-          video production and photography. We are dedicated to providing
-          clients with the highest quality of work and customer service. Working
-          with you every step of the way to ensure that your vision is brought
-          to life. Whether you are looking to create a commercial, music video,
-          promotional video, or other personal event, we have the skills and
-          expertise to make it happen.
-        </p>
-      </div>
+    <div class="text" id="footerText">
+      <p>
+        White Razor Productions is a full-service company specializing in video
+        production and photography. We are dedicated to providing clients with
+        the highest quality of work and customer service. Working with you every
+        step of the way to ensure that your vision is brought to life. Whether
+        you are looking to create a commercial, music video, promotional video,
+        or other personal event, we have the skills and expertise to make it
+        happen.
+      </p>
+    </div>
   </body>
 </html>
