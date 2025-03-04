@@ -8,11 +8,13 @@
     <link rel="icon" href="whiteRazorLogo.jpg" />
     <title>White Razor Productions</title>
     <!-- Include jQuery -->
-     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="navToggle.js" type="module" defer></script>
     <script src="subscriptionToggle.js" type="module" defer></script>
     <script src="emailHandler.js" type="module" defer></script>
-    <!--<script defer>
+    -->
+    <script defer>
       document.addEventListener("DOMContentLoaded", function () {
         const navToggle = document.querySelector(".nav-toggle");
         const navUl = document.querySelector("nav ul");
@@ -40,6 +42,7 @@
         toggleButton.addEventListener("click", async function () {
           const email = emailInput.value.trim();
           if (!email) return;
+
           try {
             const fileHandle = await getFileHandle();
             const emails = await readEmails(fileHandle);
@@ -51,6 +54,13 @@
             }
           } catch (error) {
             console.error("Error handling email:", error);
+          }
+        });
+
+        emailInput.addEventListener("keypress", function (event) {
+          if (event.key === "Enter") {
+            event.preventDefault(); // Prevent the default form submission
+            toggleButton.click(); // Trigger the submit button click event
           }
         });
 
@@ -100,7 +110,6 @@
         }
       });
     </script>
-      -->
   </head>
   <body>
     <!-- Content -->
