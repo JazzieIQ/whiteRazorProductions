@@ -8,12 +8,13 @@
     <link rel="icon" href="whiteRazorLogo.jpg" />
     <title>White Razor Productions</title>
     <!-- Include jQuery -->
-    <!--
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="navToggle.js" type="module" defer></script>
     <script src="subscriptionToggle.js" type="module" defer></script>
     <script src="emailHandler.js" type="module" defer></script>
-    -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script defer>
       document.addEventListener("DOMContentLoaded", function () {
         const navToggle = document.querySelector(".nav-toggle");
@@ -39,6 +40,15 @@
             $(".thanks").css("opacity", 0);
           }
         });
+
+        // Add event listener for Enter key press on email input
+        emailInput.addEventListener("keypress", function (event) {
+          if (event.key === "Enter") {
+            event.preventDefault(); // Prevent the default form submission
+            toggleButton.click(); // Trigger the submit button click event
+          }
+        });
+
         toggleButton.addEventListener("click", async function () {
           const email = emailInput.value.trim();
           if (!email) return;
@@ -54,13 +64,6 @@
             }
           } catch (error) {
             console.error("Error handling email:", error);
-          }
-        });
-
-        emailInput.addEventListener("keypress", function (event) {
-          if (event.key === "Enter") {
-            event.preventDefault(); // Prevent the default form submission
-            toggleButton.click(); // Trigger the submit button click event
           }
         });
 
@@ -113,7 +116,6 @@
   </head>
   <body>
     <!-- Content -->
-
     <header>
       <div class="logo">
         <div class="logoVideo">
@@ -272,3 +274,77 @@
     </div>
   </body>
 </html>
+<!--
+Include EmailJS SDK
+    <script
+      type="text/javascript"
+      src="https://cdn.emailjs.com/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("matthewrgutierrez@yahoo.com"); // Replace with your EmailJS user ID
+      })();
+    </script>
+    <script defer>
+      document.addEventListener("DOMContentLoaded", function () {
+        const navToggle = document.querySelector(".nav-toggle");
+        const navUl = document.querySelector("nav ul");
+        const toggleButton = document.getElementById("toggle");
+        const emailInput = document.getElementById("emailer");
+        const subText = document.getElementById("sub");
+        const thanksText = document.getElementById("thanks");
+
+        // Toggle navigation visibility
+        navToggle.addEventListener("click", function () {
+          navToggle.classList.toggle("active");
+          navUl.classList.toggle("show");
+        });
+
+        // jQuery-based subscription toggle
+        $("#toggle").click(function () {
+          if ($(this).is(":checked")) {
+            $(".sub").css("opacity", 0);
+            $(".thanks").css("opacity", 1);
+          } else {
+            $(".sub").css("opacity", 1);
+            $(".thanks").css("opacity", 0);
+          }
+        });
+
+        // Add event listener for Enter key press on email input
+        emailInput.addEventListener("keypress", function (event) {
+          if (event.key === "Enter") {
+            event.preventDefault(); // Prevent the default form submission
+            toggleButton.click(); // Trigger the submit button click event
+          }
+        });
+
+        toggleButton.addEventListener("click", async function () {
+          const email = emailInput.value.trim();
+          if (!email) return;
+
+          try {
+            await sendEmail(email);
+            subText.style.display = "none";
+            thanksText.style.display = "block";
+          } catch (error) {
+            console.error("Error sending email:", error);
+          }
+        });
+
+        async function sendEmail(email) {
+          const templateParams = {
+            to_email: email,
+            subject: "Subscribe Request",
+            message: "I'd like to receive e-newsletter!",
+          };
+
+          await emailjs.send(
+            "YOUR_SERVICE_ID",
+            "YOUR_TEMPLATE_ID",
+            templateParams
+          ); // Replace with your EmailJS service ID and template ID
+        }
+      });
+    </script>    
+  -->
