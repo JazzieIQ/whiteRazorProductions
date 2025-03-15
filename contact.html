@@ -9,17 +9,14 @@
     <title>White Razor Productions</title>
     <!-- Include jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="navToggle.js" type="module" defer></script>
-    <script src="subscriptionToggle.js" type="module" defer></script>
-    <script src="emailHandler.js" type="module" defer></script>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script defer type="text/javascript">
+      emailjs.init('UCW6bkcesr1qomoEH')
+    </script>
     <script defer>
       document.addEventListener("DOMContentLoaded", function () {
         const navToggle = document.querySelector(".nav-toggle");
         const navUl = document.querySelector("nav ul");
-        const toggleButton = document.getElementById("toggle");
         const emailInput = document.getElementById("emailer");
         const subText = document.getElementById("sub");
         const thanksText = document.getElementById("thanks");
@@ -48,69 +45,21 @@
             toggleButton.click(); // Trigger the submit button click event
           }
         });
-
-        toggleButton.addEventListener("click", async function () {
-          const email = emailInput.value.trim();
-          if (!email) return;
-
-          try {
-            const fileHandle = await getFileHandle();
-            const emails = await readEmails(fileHandle);
-            if (!emails.includes(email)) {
-              emails.push(email);
-              await writeEmails(fileHandle, emails);
-              subText.style.display = "none";
-              thanksText.style.display = "block";
-            }
-          } catch (error) {
-            console.error("Error handling email:", error);
-          }
+        const btn = document.getElementById('button');
+        document.getElementById('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            btn.value = 'Sending...';
+            const serviceID = 'default_service';
+            const templateID = 'Send to White Razor';
+            emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+              btn.value = 'Send Email';
+              alert('Sent!');
+            }, (err) => {
+              btn.value = 'Send Email';
+              alert(JSON.stringify(err));
+            });
         });
-
-        async function getFileHandle() {
-          const options = {
-            type: "openFile",
-            accepts: [
-              {
-                description: "Text Files",
-                extensions: ["txt"],
-                mimeTypes: ["text/plain"],
-              },
-            ],
-          };
-
-          let fileHandle;
-          try {
-            // Try to open the existing file
-            [fileHandle] = await window.showOpenFilePicker({
-              ...options,
-              suggestedName: "whiteRazorEmailer.txt",
-            });
-          } catch (error) {
-            // If the file doesn't exist, create a new one
-            fileHandle = await window.showSaveFilePicker({
-              ...options,
-              suggestedName: "whiteRazorEmailer.txt",
-            });
-          }
-          return fileHandle;
-        }
-
-        async function readEmails(fileHandle) {
-          try {
-            const file = await fileHandle.getFile();
-            const contents = await file.text();
-            return contents.split("\n").filter((email) => email.trim());
-          } catch (error) {
-            return [];
-          }
-        }
-
-        async function writeEmails(fileHandle, emails) {
-          const writable = await fileHandle.createWritable();
-          await writable.write(emails.join("\n"));
-          await writable.close();
-        }
       });
     </script>
   </head>
@@ -155,20 +104,22 @@
     <main>
       <h2>Keep in Touch</h2>
       <div id="subscription">
-        <input
-          type="text"
-          id="emailer"
-          title="Email"
-          placeholder="Enter your email"
-        />
-        <div id="submit" class="button">
-          <input type="button" id="toggle" title="Subscribe to newsletter" />
-          <label class="button" for="toggle"></label>
+        <form id="form">
+          <div class="field">
+            <label for="name"></label>
+            <input type="text" name="name" id="name" placeholder="Enter your name" required>
+          </div>
+          <div class="field">
+            <label for="email"></label>
+            <input type="text" name="email" id="email" placeholder="Enter your email" required>
+          </div>
+          <div class="text">
+            <div id="sub">Subscribe Now</div>
+            <div id="thanks">Thanks for Subscribing</div>
         </div>
-        <div class="text">
-          <div id="sub">Subscribe Now</div>
-          <div id="thanks">Thanks for Subscribing</div>
-        </div>
+          <input type="submit" id="button" value="White Razor Productions">
+        </form>
+
       </div>
       <!-- Additional Content -->
     </main>
@@ -275,6 +226,82 @@
   </body>
 </html>
 <!--
+
+        toggleButton.addEventListener("click", async function () {
+          const email = emailInput.value.trim();
+          if (!email) return;
+
+          try {
+            const fileHandle = await getFileHandle();
+            const emails = await readEmails(fileHandle);
+            if (!emails.includes(email)) {
+              emails.push(email);
+              await writeEmails(fileHandle, emails);
+              subText.style.display = "none";
+              thanksText.style.display = "block";
+            }
+          } catch (error) {
+            console.error("Error handling email:", error);
+          }
+        });
+
+        async function getFileHandle() {
+          const options = {
+            type: "openFile",
+            accepts: [
+              {
+                description: "Text Files",
+                extensions: ["txt"],
+                mimeTypes: ["text/plain"],
+              },
+            ],
+          };
+
+          let fileHandle;
+          try {
+            // Try to open the existing file
+            [fileHandle] = await window.showOpenFilePicker({
+              ...options,
+              suggestedName: "whiteRazorEmailer.txt",
+            });
+          } catch (error) {
+            // If the file doesn't exist, create a new one
+            fileHandle = await window.showSaveFilePicker({
+              ...options,
+              suggestedName: "whiteRazorEmailer.txt",
+            });
+          }
+          return fileHandle;
+        }
+
+        async function readEmails(fileHandle) {
+          try {
+            const file = await fileHandle.getFile();
+            const contents = await file.text();
+            return contents.split("\n").filter((email) => email.trim());
+          } catch (error) {
+            return [];
+          }
+        }
+
+        async function writeEmails(fileHandle, emails) {
+          const writable = await fileHandle.createWritable();
+          await writable.write(emails.join("\n"));
+          await writable.close();
+        }
+      });
+
+<input
+          type="text"
+          id="emailer"
+          title="Email"
+          placeholder="Enter your email"
+        />
+        <div id="submit" class="button">
+          <input type="button" id="toggle" title="Subscribe to newsletter" />
+          <label class="button" for="toggle"></label>
+        </div>
+
 Include EmailJS SDK
     <script
       type="text/javascript"
