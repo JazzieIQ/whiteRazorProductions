@@ -9,9 +9,13 @@
     <title>White Razor Productions</title>
     <!-- Include jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script
+      defer
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
     <script defer type="text/javascript">
-      emailjs.init('UCW6bkcesr1qomoEH')
+      emailjs.init("UCW6bkcesr1qomoEH");
     </script>
     <script defer>
       document.addEventListener("DOMContentLoaded", function () {
@@ -45,21 +49,25 @@
             toggleButton.click(); // Trigger the submit button click event
           }
         });
-        const btn = document.getElementById('button');
-        document.getElementById('form').addEventListener('submit', function(event) {
+        const btn = document.getElementById("button");
+        document
+          .getElementById("form")
+          .addEventListener("submit", function (event) {
             event.preventDefault();
-            btn.value = 'Sending...';
-            const serviceID = 'default_service';
-            const templateID = 'Send to White Razor';
-            emailjs.sendForm(serviceID, templateID, this)
-            .then(() => {
-              btn.value = 'Send Email';
-              alert('Sent!');
-            }, (err) => {
-              btn.value = 'Send Email';
-              alert(JSON.stringify(err));
-            });
-        });
+            btn.value = "Sending...";
+            const serviceID = "default_service";
+            const templateID = "Send to White Razor";
+            emailjs.sendForm(serviceID, templateID, this).then(
+              () => {
+                btn.value = "Send Email";
+                alert("Sent!");
+              },
+              (err) => {
+                btn.value = "Send Email";
+                alert(JSON.stringify(err));
+              }
+            );
+          });
       });
     </script>
   </head>
@@ -107,19 +115,30 @@
         <form id="form">
           <div class="field">
             <label for="name"></label>
-            <input type="text" name="name" id="name" placeholder="Enter your name" required>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Enter your name"
+              required
+            />
           </div>
           <div class="field">
             <label for="email"></label>
-            <input type="text" name="email" id="email" placeholder="Enter your email" required>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              placeholder="Enter your email"
+              required
+            />
           </div>
           <div class="text">
             <div id="sub">Subscribe Now</div>
             <div id="thanks">Thanks for Subscribing</div>
-        </div>
-          <input type="submit" id="button" value="White Razor Productions">
+          </div>
+          <input type="submit" id="button" value="White Razor Productions" />
         </form>
-
       </div>
       <!-- Additional Content -->
     </main>
