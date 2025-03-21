@@ -151,10 +151,71 @@ footer .text {
 #references svg:hover {
     fill: whitesmoke;
 }
+
+/*contact page*/
+#subscription {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+}
+
+#subscription input[type="text"], #subscription input[type="email"] {
+  width: 400px; /* Increase width */
+  padding: 15px; /* Increase padding */
+  margin-bottom: 10px;
+  border: 1px solid #444;
+  border-radius: 4px;
+}
+
+#submit {
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+#button {
+  width: 150px;
+  height: 50px;
+  padding: 10px; 
+  margin-bottom: 10px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-image: url('./whiteRazorLogoEdited.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: 444;
+  font-size: bold;
+  white-space: normal;
+  font-weight: bold;
+  filter: blur(5px); /* Apply blur */
+  transition: filter 0.1s ease-in-out; /* Smooth transition */
+}
+
+#button:hover, #name:hover, #email:hover {
+  filter: blur(0); /* Remove blur on hover */
+}
+
+.text {
+  font-size: 24px;
+  color: whitesmoke;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.5s ease-in-out;
+}
+
+#thanks {
+  opacity: 0;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     body {
-        font-size: 16px;
+        font-size: 14px;
     }
     .nav-toggle {
         display: block;
@@ -222,7 +283,7 @@ footer .text {
     #logoContainer {
         padding-top: 20px;
         margin-top: 20px;
-    background-color: rgb(20, 20, 20);
+        background-color: rgb(20, 20, 20);
     }
     #subscription input[id="name"], #subscription input[id="email"] {
     width: 90%; /* Adjust width */
@@ -230,80 +291,17 @@ footer .text {
     }
 
     #button {
-    width: 100%; /* Adjust width */
-    height: auto; /* Adjust height */
-    padding: 10px; /* Adjust padding */
+
     }
-}
-
-/*contact page*/
-#subscription {
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  justify-content: center;
-}
-
-#subscription input[type="text"] {
-  width: 400px; /* Increase width */
-  padding: 15px; /* Increase padding */
-  margin-bottom: 10px;
-  border: 1px solid #444;
-  border-radius: 4px;
-}
-
-#emailer {
-  width: 400px; /* Increase width */
-  padding: 15px; /* Increase padding */
-  font-size: larger;
-  margin-bottom: 10px;
-  border: 1px solid #444;
-  border-radius: 4px;
-}
-
-#button {
-  height: 100px;
-  width: 300px;
-  padding: 10px; 
-  margin-bottom: 10px;
-  border: 1px solid #444;
-  border-radius: 4px;
-}
-#submit {
-  width: 100px;
-  height: 50px;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 8px;
-
-}
-#button {
-  width: 150px;
-  height: 50px;
-  background-image: url('./whiteRazorLogoEdited.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: 444;
-  font-size: bold;
-  white-space: normal;
-  font-weight: bold;
-  filter: blur(5px); /* Apply blur */
-  transition: filter 0.1s ease-in-out; /* Smooth transition */
-}
-
-#button:hover {
-  filter: blur(0); /* Remove blur on hover */
-}
-.text {
-  font-size: 24px;
-  color:whitesmoke;
-  font-family: 'Open Sans', sans-serif;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  transition: all 0.5s ease-in-out;
-}
-
-#thanks {
-display: none;
-}
+    #subscription input[type="text"], #subscription input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    }
+    #indexfootertext { 
+    font-size: 95%;
+    }
+    
+    #contactfootertext {
+    font-size: 75%;
+    }
+  }

@@ -9,21 +9,26 @@
     <title>White Razor Productions</title>
     <!-- Include jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include EmailJS SDK -->
     <script
-      defer
       type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+      src="https://cdn.emailjs.com/dist/email.min.js"
     ></script>
-    <script defer type="text/javascript">
-      emailjs.init("UCW6bkcesr1qomoEH");
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("UCW6bkcesr1qomoEH"); // Replace with your EmailJS user ID
+      })();
     </script>
     <script defer>
       document.addEventListener("DOMContentLoaded", function () {
         const navToggle = document.querySelector(".nav-toggle");
         const navUl = document.querySelector("nav ul");
-        const emailInput = document.getElementById("emailer");
+        const form = document.getElementById("form");
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
         const subText = document.getElementById("sub");
         const thanksText = document.getElementById("thanks");
+        const submitButton = document.getElementById("button");
 
         // Toggle navigation visibility
         navToggle.addEventListener("click", function () {
@@ -31,43 +36,42 @@
           navUl.classList.toggle("show");
         });
 
-        // jQuery-based subscription toggle
-        $("#toggle").click(function () {
-          if ($(this).is(":checked")) {
-            $(".sub").css("opacity", 0);
-            $(".thanks").css("opacity", 1);
-          } else {
-            $(".sub").css("opacity", 1);
-            $(".thanks").css("opacity", 0);
-          }
-        });
-
         // Add event listener for Enter key press on email input
         emailInput.addEventListener("keypress", function (event) {
           if (event.key === "Enter") {
             event.preventDefault(); // Prevent the default form submission
-            toggleButton.click(); // Trigger the submit button click event
+            submitButton.click(); // Trigger the submit button click event
           }
         });
-        const btn = document.getElementById("button");
-        document
-          .getElementById("form")
-          .addEventListener("submit", function (event) {
-            event.preventDefault();
-            btn.value = "Sending...";
-            const serviceID = "default_service";
-            const templateID = "Send to White Razor";
-            emailjs.sendForm(serviceID, templateID, this).then(
-              () => {
-                btn.value = "Send Email";
-                alert("Sent!");
-              },
-              (err) => {
-                btn.value = "Send Email";
-                alert(JSON.stringify(err));
-              }
-            );
-          });
+
+        // Add event listener for input to reset CSS
+        nameInput.addEventListener("input", resetCSS);
+        emailInput.addEventListener("input", resetCSS);
+
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+          submitButton.value = "Sending...";
+          const serviceID = "default_service";
+          const templateID = "Send to White Razor";
+
+          emailjs.sendForm(serviceID, templateID, this).then(
+            () => {
+              submitButton.value = "Send Email";
+              subText.style.opacity = 0;
+              thanksText.style.opacity = 1;
+              setTimeout(resetCSS, 8000); // Reset CSS after 8 seconds
+            },
+            (err) => {
+              submitButton.value = "Send Email";
+              alert(JSON.stringify(err));
+            }
+          );
+        });
+
+        function resetCSS() {
+          subText.style.opacity = 1;
+          thanksText.style.opacity = 0;
+        }
       });
     </script>
   </head>
@@ -231,8 +235,8 @@
         </p>
       </div>
     </footer>
-    <div class="text" id="footerText">
-      <p>
+    <div id="footerText">
+      <p id="contactfootertext">
         White Razor Productions is a full-service company specializing in video
         production and photography. We are dedicated to providing clients with
         the highest quality of work and customer service. Working with you every
