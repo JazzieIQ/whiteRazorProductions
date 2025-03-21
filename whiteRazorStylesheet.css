@@ -212,6 +212,22 @@ footer .text {
   opacity: 0;
 }
 
+/* Latest Page */
+#galleryheader {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  width: 100%;
+  border-bottom: 10px solid whitesmoke;
+}
+
+#gallery2025 {
+  display: inline-block;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 /* Responsive adjustments */
 @media (max-width: 768px) {
     body {
