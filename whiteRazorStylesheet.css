@@ -297,11 +297,8 @@ footer .text {
     width: 100%;
     padding: 10px;
     }
-    #indexfootertext { 
-    font-size: 95%;
-    }
-    
-    #contactfootertext {
-    font-size: 75%;
+    #indexfootertext, #aboutfootertext, 
+    #contactfootertext { 
+    font-size: 87%;
     }
   }
