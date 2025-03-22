@@ -211,7 +211,10 @@ footer .text {
 #thanks {
   opacity: 0;
 }
-
+#mailto{
+  color: whitesmoke;
+  text-decoration: underline;
+}
 /* Latest Page */
 #galleryheader {
   display: flex;
