@@ -319,7 +319,7 @@ footer .text {
     padding: 10px;
     }
     #indexfootertext, #aboutfootertext, 
-    #contactfootertext { 
+    #contactfootertext, #latestfootertext, #servicesfootertext { 
     font-size: 87%;
     }
     #latestlogo img {
