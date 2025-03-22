@@ -223,10 +223,21 @@ footer .text {
 }
 
 #gallery2025 {
-  display: inline-block;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+    width: 75%;
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.displayimage  {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%; /* Full width */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Ensure it doesn't exceed the container width */
 }
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -302,12 +313,8 @@ footer .text {
         background-color: rgb(20, 20, 20);
     }
     #subscription input[id="name"], #subscription input[id="email"] {
-    width: 90%; /* Adjust width */
-    padding: 10px; /* Adjust padding */
-    }
-
-    #button {
-
+    width: 90%;
+    padding: 10px;
     }
     #subscription input[type="text"], #subscription input[type="email"] {
     width: 100%;
@@ -317,4 +324,14 @@ footer .text {
     #contactfootertext { 
     font-size: 87%;
     }
+  .display {
+    width: 100%; 
+    height: auto;
+    max-width: 100%; 
+  }
+   .displayimage {
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure it doesn't exceed the container width */
+  }
   }
