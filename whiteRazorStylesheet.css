@@ -161,8 +161,8 @@ footer .text {
 }
 
 #subscription input[type="text"], #subscription input[type="email"] {
-  width: 400px; /* Increase width */
-  padding: 15px; /* Increase padding */
+  width: 400px;
+  padding: 15px;
   margin-bottom: 10px;
   border: 1px solid #444;
   border-radius: 4px;
@@ -191,12 +191,12 @@ footer .text {
   font-size: bold;
   white-space: normal;
   font-weight: bold;
-  filter: blur(5px); /* Apply blur */
-  transition: filter 0.1s ease-in-out; /* Smooth transition */
+  filter: blur(5px);
+  transition: filter 0.1s ease-in-out;
 }
 
 #button:hover, #name:hover, #email:hover {
-  filter: blur(0); /* Remove blur on hover */
+  filter: blur(0);
 }
 
 .text {
@@ -214,30 +214,25 @@ footer .text {
 
 /* Latest Page */
 #galleryheader {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: left;
-  justify-content: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   border-bottom: 10px solid whitesmoke;
 }
 
-#gallery2025 {
-    width: 75%;
-    max-width: 100%;
-    height: auto;
-    display: inline-block;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+#latestlogo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
 }
-.displayimage  {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%; /* Full width */
-  height: auto; /* Maintain aspect ratio */
-  max-width: 100%; /* Ensure it doesn't exceed the container width */
+
+.yearheader {
+  display: flex;
+  align-items: center;
+  flex: 1;
 }
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -330,8 +325,8 @@ footer .text {
     max-width: 100%; 
   }
    .displayimage {
-    width: 100%; /* Full width */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 100%; /* Ensure it doesn't exceed the container width */
+    width: 100%;
+    height: auto;
+    max-width: 100%;
   }
   }
