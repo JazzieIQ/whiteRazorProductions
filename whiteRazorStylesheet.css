@@ -319,14 +319,18 @@ footer .text {
     #contactfootertext { 
     font-size: 87%;
     }
-  .display {
+    #latestlogo img {
+    max-width: 50%;
+    height: auto;
+    }
+    .display {
     width: 100%; 
     height: auto;
     max-width: 100%; 
-  }
+    }
    .displayimage {
     width: 100%;
     height: auto;
     max-width: 100%;
-  }
+    }
   }
