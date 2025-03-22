@@ -253,7 +253,7 @@ footer .text {
   filter: invert(1);
 }
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (orientation:portrait) and (max-width: 768px) {
     body {
         font-size: 14px;
     }
@@ -296,8 +296,8 @@ footer .text {
     }
 
     #reelVideo {
-        width:360px;
-        height: auto;
+        width: 75%;
+        height: 75%;
     }
 
     #logoVideo {
@@ -356,7 +356,7 @@ footer .text {
         max-width: 100%;
     }
   }
-  @media (orientation: landscape) {
+  @media (orientation: landscape) and (max-width: 1440px) {
     body {
         font-size: 14px;
     }
@@ -399,8 +399,8 @@ footer .text {
     }
 
     #reelVideo {
-        width: 75%;
-        height: 50%;
+        width: 100%;
+        height: auto;
     }
 
     #logoVideo {
