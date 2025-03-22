@@ -237,6 +237,21 @@ footer .text {
   align-items: center;
   flex: 1;
 }
+#gofundme-wrapper {
+  filter: invert(1);
+}
+#gofundme {
+  width: 30%;
+  height: auto;
+  max-width: 50%;
+  background-color: rgb(20, 20, 20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  margin: 0 auto;
+  filter: invert(1);
+}
 /* Responsive adjustments */
 @media (max-width: 768px) {
     body {
@@ -315,25 +330,29 @@ footer .text {
     padding: 10px;
     }
     #subscription input[type="text"], #subscription input[type="email"] {
-    width: 100%;
-    padding: 10px;
+        width: 100%;
+        padding: 10px;
     }
-    #indexfootertext, #aboutfootertext, 
-    #contactfootertext, #latestfootertext, #servicesfootertext { 
-    font-size: 87%;
+    .footertext{ 
+        font-size: 87%;
     }
+    #gofundme {
+        width: 77%;
+        height: auto;
+        max-width: 50%;}
     #latestlogo img {
-    max-width: 50%;
-    height: auto;
+        max-width: 50%;
+        height: auto;
     }
+
     .display {
-    width: 100%; 
-    height: auto;
-    max-width: 100%; 
+        width: 100%; 
+        height: auto;
+        max-width: 100%; 
     }
    .displayimage {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
     }
   }
