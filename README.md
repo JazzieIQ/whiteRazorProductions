@@ -1,1 +1,1 @@
-White razor prodyctions official website using html, css, and python.
+White razor productions official website using html, css, and python.
