@@ -8,30 +8,10 @@
     <link rel="icon" href="whiteRazorLogo.jpg" />
     <title>White Razor Productions</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--
     <script type="module" src="navToggle.js"></script>
     <script type="module" src="youtubeVideo.js"></script>
-         <script defer>
-      document.addEventListener("DOMContentLoaded", function () {
-        const navToggle = document.querySelector(".nav-toggle");
-        const navUl = document.querySelector("nav ul");
-        const homeLink = document.getElementById("homeLink");
-        const reelVideo = document.getElementById("reelVideo");
-
-        // Toggle navigation visibility
-        navToggle.addEventListener("click", function () {
-          navToggle.classList.toggle("active");
-          navUl.classList.toggle("show");
-        });
-
-        // Play YouTube video when Home link is clicked
-        homeLink.addEventListener("click", function (event) {
-          event.preventDefault(); // Prevent default behavior of the anchor tag
-          // Play the YouTube video
-          reelVideo.src =
-            "https://www.youtube.com/embed/aXOzzz6bNMg?autoplay=1";
-        });
-      });
-     </script>
+     -->
   </head>
   <body class="home">
     <header>
@@ -39,8 +19,8 @@
         <div class="logoVideo">
           <video
             id="logoVideo"
-            width="200"
-            height="100"
+            width="Auto"
+            height="100vh"
             src="White Razor Productions LLC Intro logo.mp4"
             autoplay
             muted
@@ -50,6 +30,8 @@
         </div>
         <div class="logoImage">
           <img
+            height="100%"
+            width="auto"
             src="whiteRazorLogo.jpg"
             id="logoHeader"
             alt="White Razor Productions logo"
@@ -57,56 +39,76 @@
         </div>
       </div>
       <!-- Use a button for the nav toggle for better accessibility -->
+      <!-- Button lost functionality
       <button class="nav-toggle" aria-label="Toggle navigation">
         Experience White Razor Productions
       </button>
+      -->
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
           <li><a href="latest.html">Latest</a></li>
           <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html">About</a></li>
         </ul>
       </nav>
     </header>
     <main>
+      <h2 class="header" id="reelHead">
+        Welcome to the White Razor Experience
+      </h2>
       <div class="videoPlayer" id="reel">
-        <h2 class="header" id="reelHead">
-          Welcome to the White Razor Experience
-        </h2>
         <iframe
           id="reelVideo"
-          width="1280"
-          height="720"
+          width="100vw"
+          height="auto"
           src="https://www.youtube.com/embed/aXOzzz6bNMg"
           title="YouTube video player"
           frameborder="0"
           allowaccelerometer
-          autoplay
           clipboard-write
           encrypted-media
           gyroscope
           picture-in-picture
           web-share
           referrerpolicy="strict-origin-when-cross-origin"
+          autoplay
           allowfullscreen
         >
         </iframe>
+      </div>
+      <div id="missionStatement">
+        <h2>White Razor Productions Mission Statement</h2>
+        <p>
+          Here at White Razor Production’s, we offer the highest quality in
+          video, design, and planning of wonderful content. This is in hopes to
+          bring a sense of wonder and togetherness in our dark world of strife.
+          Cinema is very important to us and we will go above and beyond for you
+          and in spreading happiness, joy, and love through our work and films.
+          We look forward to helping you in making your dreams a reality.
+        </p>
       </div>
     </main>
     <footer>
       <div class="footertext" id="indexfooterText">
         <p>
-          White Razor Productions is a full-service company specializing in
-          video production and photography. We are dedicated to providing
-          clients with the highest quality of work and customer service. Working
-          with you every step of the way to ensure that your vision is brought
-          to life. Whether you are looking to create a commercial, music video,
+          Here at White Razor Production’s, we offer the highest quality in
+          video, design, and planning of wonderful content. This is in hopes to
+          bring a sense of wonder and togetherness in our dark world of strife.
+          Cinema is very important to us and we will go above and beyond for you
+          and in spreading happiness, joy, and love through our work and films.
+          We look forward to helping you in making your dreams a reality. White
+          Razor Productions is a full-service company specializing in video
+          production and photography. We are dedicated to providing clients with
+          the highest quality of work and customer service. Working with you
+          every step of the way to ensure that your vision is brought to life.
+          Whether you are looking to create a commercial, music video,
           promotional video, or other personal event, we have the skills and
           expertise to make it happen.
         </p>
       </div>
+
       <div class="share" id="share">
         <div class="shareText" id="shareHeader">
           <h3>Follow us on social media:</h3>
@@ -170,23 +172,56 @@
         />
       </div>
       <div id="references">
-      <p>
-        <a  href="https://icons8.com/icon/P9HjgGcVghd2/imdb">IMDb</a> icon by <a href="https://icons8.com">Icons8</a>
-        <br>Additional SVG icon images from Iconmonstr<br>
+        <p>
+          <a href="https://icons8.com/icon/P9HjgGcVghd2/imdb">IMDb</a> icon by
+          <a href="https://icons8.com">Icons8</a> <br />Additional SVG icon
+          images from Iconmonstr<br />
           <a
             title="Iconmonstr"
             href="https://iconmonstr.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
-<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24"><path d="M16.5 2.75c-.965 0-1.75.785-1.75 1.75s.785 1.75 1.75 1.75 1.75-.785 1.75-1.75-.785-1.75-1.75-1.75zm0-2.75c2.481 0 4.5 2.019 4.5 4.5s-2.019 4.5-4.5 4.5-4.5-2.019-4.5-4.5 2.019-4.5 4.5-4.5zm-5.5 17.01s2.539 3.087 4.022 4.944c1.163 1.454 2.025 2.046 3.462 2.046 1.411 0 2.516-1.065 2.516-2.309 0-.539-.183-1.111-.594-1.646-1.52-1.973-2.406-3.035-2.406-3.035h-7zm-3.136-.01h-2.864c-.551 0-1-.449-1-1s.449-1 1-1h13.279c.893 0 1.4.248 1.963.958.96 1.211 2.505 3.163 2.562 3.251.736-.87 1.196-1.98 1.196-3.209 0-2.761-2.239-5-5-5h-14c-2.761 0-5 2.239-5 5s2.239 5 5 5h6.141c-1.144-1.405-3.277-4-3.277-4zm.05-12.5l2.086 2.086-1.414 1.414-2.086-2.086-2.086 2.086-1.414-1.414 2.086-2.086-2.086-2.086 1.414-1.414 2.086 2.086 2.086-2.086 1.414 1.414-2.086 2.086z"/></svg>
-        </a>
-        <br>&copy; 2023 White Razor Productions. All rights reserved.</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="44"
+              height="44"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M16.5 2.75c-.965 0-1.75.785-1.75 1.75s.785 1.75 1.75 1.75 1.75-.785 1.75-1.75-.785-1.75-1.75-1.75zm0-2.75c2.481 0 4.5 2.019 4.5 4.5s-2.019 4.5-4.5 4.5-4.5-2.019-4.5-4.5 2.019-4.5 4.5-4.5zm-5.5 17.01s2.539 3.087 4.022 4.944c1.163 1.454 2.025 2.046 3.462 2.046 1.411 0 2.516-1.065 2.516-2.309 0-.539-.183-1.111-.594-1.646-1.52-1.973-2.406-3.035-2.406-3.035h-7zm-3.136-.01h-2.864c-.551 0-1-.449-1-1s.449-1 1-1h13.279c.893 0 1.4.248 1.963.958.96 1.211 2.505 3.163 2.562 3.251.736-.87 1.196-1.98 1.196-3.209 0-2.761-2.239-5-5-5h-14c-2.761 0-5 2.239-5 5s2.239 5 5 5h6.141c-1.144-1.405-3.277-4-3.277-4zm.05-12.5l2.086 2.086-1.414 1.414-2.086-2.086-2.086 2.086-1.414-1.414 2.086-2.086-2.086-2.086 1.414-1.414 2.086 2.086 2.086-2.086 1.414 1.414-2.086 2.086z"
+              />
+            </svg>
+          </a>
+          <br />&copy; 2023 White Razor Productions. All rights reserved.
+        </p>
       </div>
-     </footer>
+    </footer>
   </body>
 </html>
 <!--
+    <script defer>
+      document.addEventListener("DOMContentLoaded", function () {
+        //const navToggle = document.querySelector(".nav-toggle");
+        //const navUl = document.querySelector("nav ul");
+        //const nav = document.querySelector('nav');
+        const homeLink = document.getElementById("homeLink");
+        const reelVideo = document.getElementById("reelVideo");
+        // Toggle navigation visibility
+        //  navToggle.addEventListener("click", function () {
+        //  navToggle.classList.toggle("active");
+        //  navUl.classList.toggle("show");
+        //  });
+
+        // Play YouTube video when Home link is clicked
+        homeLink.addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent default behavior of the anchor tag
+          // Play the YouTube video
+          reelVideo.src =
+            "https://www.youtube.com/embed/aXOzzz6bNMg?autoplay=1";
+        });
+      });
+    </script>
      <script defer>
       document.addEventListener("DOMContentLoaded", function () {
         const navToggle = document.querySelector(".nav-toggle");

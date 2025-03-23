@@ -1,19 +1,35 @@
+/* Index and Main Content */
 body {
     font-family: Arial, sans-serif;
-    font-size: 24px;
+    font-size: 2.4vh;
     margin: 0;
     padding: 0;
     background-color: rgb(20, 20, 20);
     color: whitesmoke;
 }
 
-header, footer {
-    color: whitesmoke;
-    padding: 10px 0;
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1vh 0;
+    text-align: center;
+    background-color: #333;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    border-top: 2px solid whitesmoke;
+}
+main {
+    margin-top: 10vh;
+    padding: 2vh;
     text-align: center;
 }
-
 footer {
+    color: whitesmoke;
+    padding: 1vh 0;
+    text-align: center;
     background-color: #333;
 }
 
@@ -21,36 +37,49 @@ a {
     color: whitesmoke;
     text-decoration: none;
 }
-a follow {
+
+a:visited {
     color: whitesmoke;
     text-decoration: none;
 }
-/* Logo container */
-.logo {
-    position: relative;
-    width: 100%;
-    height: 100px;
-    background-color: rgb(20, 20, 20);
-}
 
-/* Logo video */
-.logoVideo {
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10vh;
+    max-height: 100vh;
+    background-color: rgb(20, 20, 20);
     position: absolute;
     top: 0;
-    left: 0;
+    z-index: 5;
+}
+
+.logoVideo, .logoImage {
+    height: 10vh;
+    max-height: 100vh;
+    width: 100%;
+}
+
+#logoVideo, #logoHeader {
+    height: 100%;
+    width: auto;
+    position: absolute;
     z-index: 10;
 }
 
-/* Logo image */
-.logoImage {
-    position: absolute;
-    top: 0;
+.logoVideo, #logoVideo {
+    left: 0;
+}
+
+.logoImage, #logoHeader {
     left: 50%;
     transform: translateX(-50%);
-    z-index: 5;
 }
-#logoHeader {
-    width: 100px;
+
+#logoimage {
+    width: 100%;
     height: auto;
 }
 
@@ -58,12 +87,17 @@ a follow {
     display: none;
 }
 
-/* Navigation styles */
+/*Navigation*/
 nav {
+    display: flex;
     background-color: #333;
     width: 100%;
     padding: 0;
     margin: 0;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    top: 10vh;
 }
 
 nav ul {
@@ -83,7 +117,7 @@ nav ul li {
 
 nav ul li a {
     display: block;
-    padding: 15px 20px;
+    padding: 1.5vh 2vw;
     color: whitesmoke;
     text-decoration: none;
 }
@@ -97,26 +131,28 @@ nav ul li a, #phone, #email:hover {
     display: none;
 }
 
-/* Main content styling */
 main {
-    padding: 20px;
+    padding: 2vh;
     text-align: center;
 }
 
 #reelVideo {
-    width: 1280px;
-    height: 720px;
-    margin: 20px 0;
+    width: 80vw;
+    height: 45vw;
+    margin: 2vh 0;
+}
+/* Footers */
+footer .text {
+    margin: 2vh 0;
 }
 
-/* Footer styling */
-footer .text {
-    margin: 20px 0;
+#missionStatement {
+    font-size: 2vh;
 }
 
 #shareLinks a {
     color: whitesmoke;
-    margin: 0 5px;
+    margin: 0 0.5vw;
     text-decoration: none;
     display: inline-block;
 }
@@ -129,16 +165,18 @@ footer .text {
 #shareLinks svg:hover {
     fill: whitesmoke;
 }
+
 #shareLinks img {
-  transition: filter 0.3s;
+    transition: filter 0.3s;
 }
 
 #shareLinks img:hover {
-  filter: invert(120%);
+    filter: invert(120%);
 }
+
 #references a {
     color: whitesmoke;
-    margin: 0 5px;
+    margin: 0 0.5vw;
     text-decoration: none;
     display: inline-block;
 }
@@ -152,152 +190,333 @@ footer .text {
     fill: whitesmoke;
 }
 
-/*contact page*/
+/*Contact Page*/
 #subscription {
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
 }
 
 #subscription input[type="text"], #subscription input[type="email"] {
-  width: 400px;
-  padding: 15px;
-  margin-bottom: 10px;
-  border: 1px solid #444;
-  border-radius: 4px;
+    width: 80vw;
+    padding: 2vh;
+    margin-bottom: 1vh;
+    border: 1px solid #444;
+    border-radius: 4px;
 }
 
 #submit {
-  width: 100px;
-  height: 50px;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 8px;
+    width: 20vw;
+    height: 5vh;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 8px;
 }
 
 #button {
-  width: 150px;
-  height: 50px;
-  padding: 10px; 
-  margin-bottom: 10px;
-  border: 1px solid #444;
-  border-radius: 4px;
-  background-image: url('./whiteRazorLogoEdited.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: 444;
-  font-size: bold;
-  white-space: normal;
-  font-weight: bold;
-  filter: blur(5px);
-  transition: filter 0.1s ease-in-out;
+    width: auto;
+    height: 10vh;
+    padding: 2vh;
+    margin-bottom: 1vh;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-image: url('./whiteRazorLogoEdited.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #444;
+    font-size: bold;
+    white-space: normal;
+    font-weight: bold;
+    filter: blur(5px);
+    transition: filter 0.1s ease-in-out;
 }
 
 #button:hover, #name:hover, #email:hover {
-  filter: blur(0);
+    filter: blur(0);
 }
 
 .text {
-  font-size: 24px;
-  color: whitesmoke;
-  font-family: 'Open Sans', sans-serif;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  transition: all 0.5s ease-in-out;
+    font-size: 3vh;
+    color: whitesmoke;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.2vw;
+    text-transform: uppercase;
+    transition: all 0.5s ease-in-out;
 }
 
 #thanks {
-  opacity: 0;
+    opacity: 0;
 }
-#mailto{
-  color: whitesmoke;
-  text-decoration: underline;
+
+#mailto {
+    color: whitesmoke;
+    text-decoration: underline;
 }
 /* Latest Page */
 #galleryheader {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  border-bottom: 10px solid whitesmoke;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1vh solid whitesmoke;
 }
 
 #latestlogo {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
 }
 
 .yearheader {
-  display: flex;
-  align-items: center;
-  flex: 1;
+    display: flex;
+    align-items: center;
+    flex: 1;
 }
+
 #gofundme-wrapper {
-  filter: invert(1);
+    filter: invert(1);
 }
+
 #gofundme {
-  width: 30%;
-  height: auto;
-  max-width: 50%;
-  background-color: rgb(20, 20, 20);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 10px;
-  margin: 0 auto;
-  filter: invert(1);
+    width: 50vw;
+    height: auto;
+    max-width: 50vw;
+    background-color: rgb(20, 20, 20);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2vh;
+    margin: 0 auto;
+    filter: invert(1);
 }
 /* Responsive adjustments */
-@media (orientation:portrait) and (max-width: 768px) {
+@media (max-width: 768px) {
     body {
-        font-size: 14px;
-    }
-    .nav-toggle {
-        display: block;
-        background-color: #444;
-        color: #fff;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-        font-size: 16px;
-        margin-left: auto;
-    }
-
-    nav ul {
-        flex-direction: column;
-        display: none;
-        width: 100%;
-    }
-
-    nav ul.show {
-        display: flex;
+        font-size: 1.4vh;
     }
 
     .logo {
-        flex-direction: column;
+        display: flex;
         align-items: center;
         justify-content: center;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        max-height: 10vh;
+        background-color: rgb(20, 20, 20);
+        z-index: 5;
+    }
+
+    .logoVideo, .logoImage {
+        height: 10vh;
+        max-height: 100%;
+        width: 100%;
+    }
+
+    #logoVideo, #logoHeader {
+        height: 100%;
+        width: auto;
+        position: absolute;
+        z-index: 10;
+    }
+
+    .logoVideo, #logoVideo {
+        left: 0;
+    }
+
+    .logoImage, #logoHeader {
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     #logoHeader, #logoFooter {
         display: block;
         margin: 0 auto;
-        width: 100px;
+        width: 10vh;
         height: auto;
     }
-
-    #reelHead {
+    #logoImage, .logoImage {
+        display: none;
+    }
+    .nav-toggle {
         display: none;
     }
 
     #reelVideo {
-        width: 75%;
-        height: 75%;
+        width: 75vw;
+        height: auto;
+        max-width: 100vw;
+        max-height: 100vh;
+    }
+
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #footerText, #share {
+        width: 100%;
+        text-align: center;
+        padding-right: 0;
+    }
+
+    #share {
+        display: block;
+        justify-content: center;
+        padding-top: 1vh;
+    }
+
+    #logoContainer {
+        padding-top: 2vh;
+        margin-top: 2vh;
+        background-color: rgb(20, 20, 20);
+    }
+
+    #subscription input[id="name"], #subscription input[id="email"] {
+        width: 90vw;
+        padding: 2vh;
+    }
+
+    #button {
+        width: 100vw;
+        height: 100%;
+        padding: 2vh;
+        margin: 0;
+        background-size: cover;
+    }
+
+    #subscription input[type="text"], #subscription input[type="email"] {
+        width: 100%;
+        padding: 2vh;
+    }
+
+    .footertext { 
+        font-size: 1.2vh;
+    }
+
+    #gofundme {
+        width: 77vw;
+        height: auto;
+        max-width: 100vw;
+        max-height: 100vh;
+    }
+
+    #latestlogo img {
+        max-width: 50%;
+        height: auto;
+    }
+
+    .display {
+        width: 100%; 
+        height: auto;
+        max-width: 100%; 
+    }
+
+    .displayimage {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 768px) {
+    body {
+        font-size: 1.4vh;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+        background-color: #333;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        top: 10vh;
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+
+    nav ul li {
+        flex: 1;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 1.5vh 2vw;
+        color: whitesmoke;
+        text-decoration: none;
+    }
+
+    nav ul li a, #phone, #email:hover {
+        background-color: #555;
+        text-decoration: underline;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        max-height: 10vh;
+        background-color: rgb(20, 20, 20);
+    }
+
+    .logoVideo, .logoImage {
+        height: 10vh;
+        max-height: 100vh;
+        width: 100%;
+    }
+
+    #logoVideo, #logoHeader {
+        height: 100%;
+        width: auto;
+        position: absolute;
+        z-index: 10;
+    }
+
+    .logoVideo, #logoVideo {
+        left: 0;
+    }
+
+    .logoImage, #logoHeader {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #logoHeader, #logoFooter {
+        display: block;
+        margin: 0 auto;
+        width: 10vw;
+        height: auto;
+    }
+
+    #reelVideo {
+        width: 60vw;
+        height: auto;
+        max-width: 100vw;
+        max-height: 100vh;
     }
 
     #logoVideo {
@@ -312,34 +531,50 @@ footer .text {
     #footerText, #share {
         width: 100%;
         text-align: center;
-        padding-right: 0px;
+        padding-right: 0;
     }
 
     #share {
         display: block;
         justify-content: center;
-        padding-top: 10px;
+        padding-top: 1vh;
     }
+
     #logoContainer {
-        padding-top: 20px;
-        margin-top: 20px;
+        padding-top: 2vh;
+        margin-top: 2vh;
         background-color: rgb(20, 20, 20);
     }
+
     #subscription input[id="name"], #subscription input[id="email"] {
-    width: 90%;
-    padding: 10px;
+        width: 90vw;
+        padding: 2vh;
     }
+
+    #button {
+        width: 100vw;
+        height: 10vh;
+        padding: 2vh;
+        margin: 0;
+        background-size: cover;
+    }
+
     #subscription input[type="text"], #subscription input[type="email"] {
         width: 100%;
-        padding: 10px;
+        padding: 2vh;
     }
-    .footertext{ 
-        font-size: 87%;
+
+    .footertext { 
+        font-size: 1.2vh;
     }
+
     #gofundme {
-        width: 77%;
+        width: 77vw;
         height: auto;
-        max-width: 50%;}
+        max-width: 100vw;
+        max-height: 100vh;
+    }
+
     #latestlogo img {
         max-width: 50%;
         height: auto;
@@ -350,112 +585,77 @@ footer .text {
         height: auto;
         max-width: 100%; 
     }
-   .displayimage {
+
+    .displayimage {
         width: 100%;
         height: auto;
         max-width: 100%;
     }
-  }
-  @media (orientation: landscape) and (max-width: 1440px) {
-    body {
-        font-size: 14px;
+}
+
+/*
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1vh 0;
+        text-align: center;
+        background-color: #333;
+        width: 100%;
+        max-height: 10vh;
+        position: relative;
+        border-top: 2px solid whitesmoke;
+    }
+        nav {
+        display: flex;
+        background-color: #333;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        top: 10vh;
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+
+    nav ul li {
+        flex: 1;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 1.5vh 2vw;
+        color: whitesmoke;
+        text-decoration: none;
+    }
+
+    nav ul li a, #phone, #email:hover {
+        background-color: #555;
+        text-decoration: underline;
     }
     .nav-toggle {
+        display: none;
+        height: 5vh;
+        width: auto;
         display: block;
         background-color: #444;
         color: #fff;
         border: none;
-        padding: 10px;
         cursor: pointer;
-        font-size: 16px;
+        font-size: 1.6vh;
         margin-left: auto;
+        margin-top: 10vh;
     }
-
-    nav ul {
-        flex-direction: column;
-        display: none;
-        width: 100%;
-    }
-
-    nav ul.show {
-        display: flex;
-    }
-
-    .logo {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #logoHeader, #logoFooter {
-        display: block;
-        margin: 0 auto;
-        width: 100px;
-        height: auto;
-    }
-
-    #reelHead {
-        display: none;
-    }
-
-    #reelVideo {
-        width: 100%;
-        height: auto;
-    }
-
-    #logoVideo {
-        display: none;
-    }
-
-    footer {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    #footerText, #share {
-        width: 100%;
-        text-align: center;
-        padding-right: 0px;
-    }
-
-    #share {
-        display: block;
-        justify-content: center;
-        padding-top: 10px;
-    }
-    #logoContainer {
-        padding-top: 20px;
-        margin-top: 20px;
-        background-color: rgb(20, 20, 20);
-    }
-    #subscription input[id="name"], #subscription input[id="email"] {
-    width: 90%;
-    padding: 10px;
-    }
-    #subscription input[type="text"], #subscription input[type="email"] {
-        width: 100%;
-        padding: 10px;
-    }
-    .footertext{ 
-        font-size: 87%;
-    }
-    #gofundme {
-        width: 77%;
-        height: auto;
-        max-width: 50%;}
-    #latestlogo img {
-        max-width: 50%;
-        height: auto;
-    }
-
-    .display {
-        width: 100%; 
-        height: auto;
-        max-width: 100%; 
-    }
-   .displayimage {
-        width: 100%;
-        height: auto;
-        max-width: 100%;
-    }
-  }
+*/
