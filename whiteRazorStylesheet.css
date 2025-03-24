@@ -382,7 +382,11 @@ footer .text {
     body {
         font-size: 1.4vh;
     }
-
+    main {
+        margin-top: 10vh;
+        padding: 2vh;
+        text-align: center;
+    }
     .logo {
         display: flex;
         align-items: center;
@@ -523,16 +527,18 @@ footer .text {
         height: auto;
     }
 
-    .display {
+    .display { 
+        align-items: center;
         width: 100%; 
         height: auto;
         max-width: 100%; 
     }
 
     .displayimage {
+        align-items: center;
         width: 100%;
         height: auto;
-        max-width: 100%;
+        max-width: 80%;
     }
 
     .carddisplay {
@@ -558,7 +564,11 @@ footer .text {
     body {
         font-size: 1.4vh;
     }
-
+    main {
+        margin-top: 10vh;
+        padding: 2vh;
+        text-align: center;
+    }
     .nav-toggle {
         display: none;
     }
@@ -728,16 +738,18 @@ footer .text {
         height: auto;
     }
 
-    .display {
+    .display { 
+        align-items: center;
         width: 100%; 
         height: auto;
         max-width: 100%; 
     }
 
     .displayimage {
+        align-items: center;
         width: 100%;
         height: auto;
-        max-width: 100%;
+        max-width: 80%;
     }
 
     .carddisplay {
