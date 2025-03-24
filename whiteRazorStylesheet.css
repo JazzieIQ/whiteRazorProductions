@@ -137,6 +137,10 @@ main {
     padding: 2vh;
     text-align: center;
 }
+
+.card{
+    font-size: 3vh;
+}
 /* Card Display */
 #currentProjects {
     display: flex;
@@ -171,7 +175,7 @@ main {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    gap: 2vh;
+
 }
 
 .displaycard {
@@ -219,7 +223,7 @@ main {
 
 #reelVideo {
     width: 80vw;
-    height: 45vh;
+    height: 70vh;
     margin: 2vh 0;
 }
 
@@ -229,7 +233,7 @@ footer .text {
 }
 
 #missionStatement {
-    font-size: 2vh;
+    font-size: 2.75vh;
 }
 
 #shareLinks a {
@@ -405,8 +409,7 @@ footer .text {
     }
 
     .logoVideo, #logoVideo {
-        left: 50%;
-        transform: translateX(-50%);
+        left:0;
     }
 
     .logoImage, #logoHeader {
@@ -431,7 +434,7 @@ footer .text {
 
     #reelVideo {
         width: 75vw;
-        height: auto;
+        height: 45vh;
         max-width: 100vw;
         max-height: 100vh;
     }
@@ -474,7 +477,7 @@ footer .text {
     }
 
     #button {
-        width: 30vw;
+        width: 20vw;
         height: auto;
         padding: 2vh;
         margin: 0;
@@ -650,13 +653,9 @@ footer .text {
 
     #reelVideo {
         width: 60vw;
-        height: auto;
+        height: 40vh;
         max-width: 100vw;
         max-height: 100vh;
-    }
-
-    #logoVideo {
-        display: none;
     }
 
     footer {
