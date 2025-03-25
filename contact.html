@@ -73,6 +73,13 @@
           thanksText.style.opacity = 0;
         }
       });
+      // Add event listener to .logoVideo to return to index page
+      const logoVideo = document.querySelector("#logoVideo");
+      if (logoVideo) {
+        logoVideo.addEventListener("click", function () {
+          window.location.href = "index.html";
+        });
+      }
     </script>
   </head>
   <body>
