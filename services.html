@@ -8,6 +8,7 @@
     <link rel="icon" href="whiteRazorLogo.jpg" />
     <title>White Razor Production's Latest</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--
     <script type="module" src="navToggle.js"></script>
     <script type="module" src="youtubeVideo.js"></script>
     <script defer>
@@ -23,6 +24,16 @@
           navUl.classList.toggle("show");
         });
       });
+    </script>
+  -->
+    <script defer>
+      // Add event listener to .logoVideo to return to index page
+      const logoVideo = document.querySelector('#logoVideo');
+      if (logoVideo) {
+          logoVideo.addEventListener('click', function() {
+            window.location.href = 'index.html';
+          });
+      }
     </script>
   </head>
   <body>

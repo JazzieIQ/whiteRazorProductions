@@ -64,6 +64,15 @@ a:visited {
     width: 100%;
 }
 
+.logoVideo:hover {
+    filter: blur(5px);
+    cursor: pointer;
+}
+
+.logoVideo:active {
+    filter: blur(0px);
+}
+
 #logoVideo, #logoHeader {
     height: 100%;
     width: auto;
@@ -138,7 +147,7 @@ main {
     text-align: center;
 }
 
-.card{
+.card {
     font-size: 3vh;
 }
 /* Card Display */
@@ -175,7 +184,6 @@ main {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-
 }
 
 .displaycard {
@@ -745,7 +753,7 @@ footer .text {
         max-width: 100%; 
     }
 
-    .displayimage {
+    .displayimage{
         align-items: center;
         width: 100%;
         height: auto;

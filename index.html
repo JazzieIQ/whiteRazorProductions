@@ -12,6 +12,15 @@
     <script type="module" src="navToggle.js"></script>
     <script type="module" src="youtubeVideo.js"></script>
      -->
+    <script>
+    // Add event listener to .logoVideo to return to index page
+    const logoVideo = document.querySelector('#logoVideo');
+    if (logoVideo) {
+        logoVideo.addEventListener('click', function() {
+            window.location.href = 'index.html';
+        });
+    }
+    </script>
   </head>
   <body class="home">
     <header>
